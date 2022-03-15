@@ -1897,8 +1897,6 @@ def simulado_destaque_finder():
 class ButtonGrid_Menu_v2 (ButtonBehavior, MDBoxLayout, HoverBehavior):
 	pass
 
-
-
 class ButtonGridBlue(ButtonBehavior, MDBoxLayout, HoverBehavior):
 	tema = pickle.load((open("tema.p", "rb")))
 	cor = StringProperty(tema[0].cor_aplicativo)
@@ -2042,6 +2040,7 @@ class Inicio(Screen):
 		cor_aplicativo = '686fa3'
 		cor_widget = 'eef2fe'
 		simulado_name_dynamic = StringProperty('')
+
 	def criar_materia(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.criar_nova_materia:
@@ -2338,6 +2337,7 @@ class Cronograma(Screen):
 			pickle.dump(default, f)
 		return default
 
+
 	Padrao = Tema(cor_aplicativo='686fa3', cor_aplicativo_tuple=[0.3098, 0.3411, 0.5333], cor_fundo_menu_deg1='464c7e',
 				  cor_fundo_menu_deg2='575e91', cor_fundo_trabalho='e6ebfb',
 				  cor_fundo_trabalho_tuple=[0.9019, 0.9215, 0.9843, 1], cor_widget='eef2fe', cor_widget_hover='f4f7fe',
@@ -2345,7 +2345,7 @@ class Cronograma(Screen):
 
 	tema = read_or_new_pickle(path="tema.p", default=[Padrao, "Padrão"])
 	tema = pickle.load((open("tema.p", "rb")))
-
+	cor_aplicativo = StringProperty(tema[0].cor_aplicativo)
 	dialog10 = None
 	confirmar_remover = None
 	index_value = StringProperty()
@@ -2378,9 +2378,6 @@ class Cronograma(Screen):
 		self.info_cronograma_item.dismiss()
 
 	value = NumericProperty(250)
-	cor_aplicativo = '686fa3'
-	cor_aplicativo_bold = '464c7e'
-	cor_widget = 'eef2fe'
 
 	estudado = StringProperty()
 	estudado_data = StringProperty()
@@ -2554,15 +2551,15 @@ class Cronograma(Screen):
 	# FUNÇÕES E WIDGETS RELACIONADOS PARA REMOVER ITEM DO CRONOGRAMA
 	def confirmar_remover_dialog(self, root, *args):
 		try:
-			if len(root.ids.cronograma22.children[-1].get_row_checks()) > 0:
+			if len(root.ids.cronograma22.children[0].children[0].get_row_checks()) > 0:
 				if not self.confirmar_remover:
+					self.tema = pickle.load((open("tema.p", "rb")))
 					self.confirmar_remover = MDDialog(
 						title=f'[color={self.cor_aplicativo}]Remover Item[/color]',
-						md_bg_color=(0.9019, 0.9215, 0.9843, 1),
+						md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 						type="custom",
 						auto_dismiss=True,
-						text=f"[color={self.cor_aplicativo}]Você deseja remover [b]esses items[/b] do seu cronograma?\nEsse processo é irreversível e irá [b]remover permanentemente[/b] esses items.[/color]".format(
-							str(grid.cor_principal_aplicativo)),
+						text=f"[color={self.cor_aplicativo}]Você deseja remover [b]esses items[/b] do seu cronograma?\nEsse processo é irreversível e irá [b]remover permanentemente[/b] esses items.[/color]",
 						buttons=[
 							MDFlatButton(
 								text=f"[color={self.cor_aplicativo}][b]NÃO[/color][/b]",
@@ -2590,8 +2587,8 @@ class Cronograma(Screen):
 		self.confirmar_remover.dismiss()
 	def close_remover(self, obj):
 		self.removerItemCronograma(self)
-	def removerItemCronograma(root, self):
-			def rebuildDataStyle(lista, color_hex='686fa3'):
+	def removerItemCronograma(self,root):
+			def rebuildDataStyle(lista, color_hex=self.tema[0].cor_aplicativo):
 				for x in range(len(lista)):
 					if lista[x] == [' ', ' ', ' ', ' ', ' ', ' ', ' ']:
 						lista[x] = [' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -2610,7 +2607,7 @@ class Cronograma(Screen):
 
 				return lista
 
-			options = list(root.ids.cronograma22.children[-1].get_row_checks())
+			options = list(root.ids.cronograma22.children[0].children[0].get_row_checks())
 			options_remove = rebuildDataStyle(options)
 
 			def remover(lista_remover):
@@ -2692,7 +2689,7 @@ class Cronograma(Screen):
 						else:
 							return lista
 				DataSearched = SearchByData(data_cronograma, str(self.data_selecionada))
-				self.ids.cronograma22.children[0].update_row_data(self, AutoSizeTableRowsNum(DataSearched,
+				self.ids.cronograma22.children[0].children[0].update_row_data(self, AutoSizeTableRowsNum(DataSearched,
 																							 grid.rows_per_page_cronograma + 1))
 				if len(options) == 1:
 					toast("Item Removido Com Sucesso!")
@@ -2733,7 +2730,7 @@ class Cronograma(Screen):
 
 				today = date.today()
 				DataSearched_today = SearchByData(data_cronograma, str(today))
-				self.ids.cronograma22.children[0].update_row_data(self, AutoSizeTableRowsNum(DataSearched_today,
+				self.ids.cronograma22.children[0].children[0].update_row_data(self, AutoSizeTableRowsNum(DataSearched_today,
 																							 grid.rows_per_page_cronograma + 1))
 				if len(options) == 1:
 					toast("Item Removido Com Sucesso!")
@@ -2743,7 +2740,7 @@ class Cronograma(Screen):
 
 				def refreshChecks(dt):
 					try:
-						self.ids.cronograma22.children[0].DoubleClickRefreshChecks()
+						self.ids.cronograma22.children[0].children[0].DoubleClickRefreshChecks()
 
 					except IndexError:
 						pass
