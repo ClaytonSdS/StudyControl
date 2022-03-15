@@ -4,7 +4,7 @@
  Software developed by InvisionCode to help students organize their studies and get better results.
  #
 # How to Use
-* First of all, you need to create your on subjects like math, physics, etc.
+* First of all, you need to create your own subjects like math, physics, etc.
 * After that, you need to create topics that each subject has.
 * Finally, you can create new events based on your study routine in schedule menu.
 # Functions
