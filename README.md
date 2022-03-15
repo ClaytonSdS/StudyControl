@@ -3,6 +3,9 @@
 
  Software developed by InvisionCode to help students organize their studies and get better results.
  #
+# Philosophy
+Our software is made by students for students, our goal is to constantly change Invision Study software based on your feeedback. So, your opinion is really important to us, you are part of this project, feel free to give your ideas.
+
 # How to Use
 * First of all, you need to create your own subjects like math, physics, etc.
 * After that, you need to create topics that each subject has.
