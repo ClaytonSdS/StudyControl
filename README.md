@@ -12,6 +12,6 @@
 * Statistics for each simulated.
 * Timer function.
 
-# How to get.
+# Get Full Version
 You can get this full version of the software by buying from one of the links below.
 
