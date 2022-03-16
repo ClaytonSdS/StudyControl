@@ -486,6 +486,166 @@
                             line_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
                             text_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
 
+
+<Conteudo_Duration>
+    orientation: "vertical"
+    size_hint_y: None
+    height: dp(200)
+    spacing: 10
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 1,0,0,0
+        pos_hint: {"center_x":0.5, "center_y": 0.5}
+        size: self.parent.size
+        ###
+        GridLayout:
+            rows: 2
+            cols:1
+            spacing: 10
+            # BOX LAYOUT PARA TODOS OS TEXTOS + TEXT INPUTS
+            MDBoxLayout:
+                orientation: 'vertical'
+                md_bg_color: 1,0,0,0
+                size_hint: (1,1)
+                spacing: 10
+
+                # BOX LAYOUT PARA HORAS | MINUTOS ESCRITOS
+                MDBoxLayout:
+                    md_bg_color: 0,0,0,0
+                    orientation: 'horizontal'
+                    spacing: 10
+                    size_hint: (1,0.4)
+                    MDBoxLayout_Hover:
+                        md_bg_color: 0,0,0,0
+                        on_enter: self.cor = app.cor_widgets_hover
+                        on_leave: self.cor = app.cor_widgets_default
+                        canvas.before:
+                            Color:
+                                rgb:  get_color_from_hex('#{}'.format(self.cor))
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                        MDLabel:
+                            markup: True
+                            text: '[b]Horas[/b]'
+                            halign: 'center'
+                            valign: 'middle'
+                            color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                            font_size: 20
+
+                    MDBoxLayout_Hover:
+                        md_bg_color: 0,0,0,0
+                        size_hint:(0.13,1)
+
+                    MDBoxLayout_Hover:
+                        md_bg_color: 0,0,0,0
+                        on_enter: self.cor = app.cor_widgets_hover
+                        on_leave: self.cor = app.cor_widgets_default
+                        padding: 10
+                        canvas.before:
+                            Color:
+                                rgb:  get_color_from_hex('#{}'.format(self.cor))
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                        MDLabel:
+                            markup: True
+                            text: '[b]Minutos[/b]'
+                            halign: 'center'
+                            valign: 'middle'
+                            color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                            font_size: 20
+                #///////////////////////////////////////////////////
+                # BOX PARA BOTAO HORAS | DOIS PONTOS | BOTAO MINUTOS
+                MDBoxLayout:
+                    md_bg_color: 0,0,0,0
+                    orientation: 'horizontal'
+                    spacing: 10
+                    # BOTAO HORAS
+                    MDBoxLayout_Hover:
+                        md_bg_color: 0,0,0,0
+                        on_enter: self.cor = app.cor_widgets_hover
+                        on_leave: self.cor = app.cor_widgets_default
+                        padding: 10
+                        canvas.before:
+                            Color:
+                                rgb:  get_color_from_hex('#{}'.format(self.cor))
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                        MDTextField:
+                            id: horas_
+                            size: self.parent.size
+                            pos_hint: {"center_x":0.5, "center_y": 0.58}
+                            font_size: 80
+                            text: "00"
+                            max_text_length: 2
+                            input_filter: "int"
+                            helper_text: 'Hora'
+                            helper_text_mode: 'persistent'
+                            line_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                            text_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+
+                    # DOIS PONTOS
+                    MDBoxLayout:
+                        md_bg_color: 0,0,0,0
+                        orientation: 'vertical'
+                        spacing: 15
+                        padding: [0,20]
+                        size_hint: (0.13,1)
+                        MDBoxLayout_Hover:
+                            md_bg_color: 0,0,0,0
+                            canvas.before:
+                                Color:
+                                    rgb:  get_color_from_hex('#{}'.format(self.cor))
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+
+                        MDBoxLayout_Hover:
+                            md_bg_color: 0,0,0,0
+                            canvas.before:
+                                Color:
+                                    rgb:  get_color_from_hex('#{}'.format(self.cor))
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+
+                    #///////////////////////////////////////////////////
+                    # BOTAO MINUTOS
+                    MDBoxLayout:
+                        md_bg_color: 0,0,0,0
+                        orientation: 'horizontal'
+                        spacing: 10
+                        MDBoxLayout_Hover:
+                            md_bg_color: 0,0,0,0
+                            on_enter: self.cor = app.cor_widgets_hover
+                            on_leave: self.cor = app.cor_widgets_default
+                            padding: 10
+                            canvas.before:
+                                Color:
+                                    rgb:  get_color_from_hex('#{}'.format(self.cor))
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                            MDTextField:
+                                id: minutos_
+                                size: self.parent.size
+                                pos_hint: {"center_x":0.5, "center_y": 0.58}
+                                font_size: 80
+                                text: "00"
+                                max_text_length: 2
+                                input_filter: "int"
+                                helper_text: 'Minuto'
+                                line_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                                text_color_focus: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+
 <Conteudo_ShowInfo>
     orientation: "vertical"
     size_hint_y: None
@@ -699,9 +859,6 @@
                         valign: 'middle'
                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
                         font_size: 15
-
-
-
 
 <Conteudo_InfoCronograma>
     orientation: "vertical"
@@ -1427,6 +1584,210 @@
                     pos_hint: {"center_x":0.5, "center_y": 0.5}
                     font_size: 16
                     color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+
+
+<Conteudo_AdicionarItem>
+    orientation: "vertical"
+    size_hint_y: None
+    height: dp(450)
+    spacing: 10
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0,0,0,0
+        pos_hint: {"center_x":0.5, "center_y": 0.5}
+        size: self.parent.size
+        GridLayout:
+            rows: 6
+            cols:1
+            spacing: 10
+            #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            # BOX LAYOUT PARA CATEGORIA | MATÉRIA | TÓPICO
+            MDBoxLayout_Hover:
+                on_enter: self.cor = app.cor_widgets_hover
+                on_leave: self.cor = app.cor_widgets_default
+                size_hint: (1,0.45)
+                canvas.before:
+                    Color:
+                        rgb: get_color_from_hex('#{}'.format(self.cor))
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                MDLabel:
+                    markup: True
+                    halign: 'center'
+                    valign:'middle'
+                    color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                    text: "[b]Selecione as informações do seu item.[/b]"
+                    font_size: 16
+            MDBoxLayout:
+                orientation: 'horizontal'
+                md_bg_color: 1,0,0,0
+                spacing: 10
+                # CATEGORIA
+                MDBoxLayout_Hover:
+                    on_enter: self.cor = app.cor_widgets_hover
+                    on_leave: self.cor = app.cor_widgets_default
+                    padding:10
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    CategoriasSpinner:
+                        id: spinner_categoria
+                        size_hint: (0.5,1)
+                        background_normal: 'icons/teste.png'
+                        background_color: app.cor_principal_aplicativo_tuple
+                        on_press: self.background_color= app.cor_principal_aplicativo_tuple
+                        on_text: root.update_categoria()
+
+                # MATÉRIA
+                MDBoxLayout_Hover:
+                    on_enter: self.cor = app.cor_widgets_hover
+                    on_leave: self.cor = app.cor_widgets_default
+                    padding:10
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    AllMateriasSpinner:
+                        id: spinner_materia
+                        size_hint: (0.5,1)
+                        background_normal: 'icons/teste.png'
+                        background_color: app.cor_principal_aplicativo_tuple
+                        on_press: self.background_color= app.cor_principal_aplicativo_tuple
+                        on_text: root.update_materia()
+
+                # TOPICO
+                MDBoxLayout_Hover:
+                    on_enter: self.cor = app.cor_widgets_hover
+                    on_leave: self.cor = app.cor_widgets_default
+                    padding:10
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    TopicosSpinner:
+                        id: spinner_topico
+                        size_hint: (0.5,1)
+                        background_normal: 'icons/teste.png'
+                        background_color: app.cor_principal_aplicativo_tuple
+                        on_press: self.background_color= app.cor_principal_aplicativo_tuple
+
+            # ESPAÇADOR
+            MDBoxLayout:
+                orientation: 'horizontal'
+                md_bg_color: 0,0,0,0
+                size_hint: (1,0.15)
+
+            #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            # BOX LAYOUT PARA DATA | HORÁRIO | DURAÇÃO
+            MDBoxLayout_Hover:
+                on_enter: self.cor = app.cor_widgets_hover
+                on_leave: self.cor = app.cor_widgets_default
+                size_hint: (1,0.45)
+                canvas.before:
+                    Color:
+                        rgb: get_color_from_hex('#{}'.format(self.cor))
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                MDLabel:
+                    markup: True
+                    halign: 'center'
+                    valign:'middle'
+                    color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                    text: "[b]Selecione a data, horário e duração.[/b]"
+                    font_size: 16
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                md_bg_color: 0,0,0,0
+                spacing: 10
+                # DATA
+                ButtonGrid:
+                    orientation: 'horizontal'
+                    on_release: self.cor = app.cor_widgets_default; root.show_date_picker()
+                    on_enter: self.cor = app.cor_widgets_hover;
+                    on_leave: self.cor = app.cor_widgets_default;
+                    on_press: self.cor = app.cor_barra_inferior_licenca;
+                    padding: 20
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    MDLabel:
+                        markup: True
+                        text: 'Selecionar\n[b][size={}]Data[/b][/size]'.format(22)
+                        halign: 'center'
+                        valign:'middle'
+                        color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                        font_size: 20
+                # HORÁRIO
+                ButtonGrid:
+                    orientation: 'horizontal'
+                    on_release: self.cor = app.cor_widgets_default; root.show_time_picker()
+                    on_enter: self.cor = app.cor_widgets_hover;
+                    on_leave: self.cor = app.cor_widgets_default;
+                    on_press: self.cor = app.cor_barra_inferior_licenca;
+                    padding: 20
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    MDLabel:
+                        markup: True
+                        text: 'Selecionar\n[b][size={}]Horário[/b][/size]'.format(22)
+                        halign: 'center'
+                        valign:'middle'
+                        color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                        font_size: 20
+
+                # DURAÇÃO
+                ButtonGrid:
+                    orientation: 'horizontal'
+                    on_release: self.cor = app.cor_widgets_default; root.duration_dialog(root)
+                    on_enter: self.cor = app.cor_widgets_hover;
+                    on_leave: self.cor = app.cor_widgets_default;
+                    on_press: self.cor = app.cor_barra_inferior_licenca;
+                    padding: 20
+                    canvas.before:
+                        Color:
+                            rgb: get_color_from_hex('#{}'.format(self.cor))
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                    MDLabel:
+                        markup: True
+                        text: 'Selecionar\n[b][size={}]Duração[/b][/size]'.format(22)
+                        halign: 'center'
+                        valign:'middle'
+                        color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                        font_size: 20
+            # ESPAÇADOR
+            MDBoxLayout:
+                orientation: 'horizontal'
+                md_bg_color: 0,0,0,0
+                size_hint: (1,0.15)
+
+
 
 <Content_RemoveTopic_Specific>
     orientation: "vertical"
@@ -3116,7 +3477,7 @@ WindowManager:
                                                 # BOTAO DE ADICIONAR EVENTO | ADICIONAR NOVO CRONOGRAMA NA TABELA
                                                 ButtonGrid:
                                                     size_hint: (2.026,1)
-                                                    on_release: self.cor = app.cor_widgets_default; root.refresh_cronograma_item()
+                                                    on_release: self.cor = app.cor_widgets_default; root.adicionar_item_dialog(root)
                                                     on_enter: self.cor = app.cor_widgets_hover;
                                                     on_leave: self.cor = app.cor_widgets_default;
                                                     on_press: self.cor = app.cor_barra_inferior_licenca;

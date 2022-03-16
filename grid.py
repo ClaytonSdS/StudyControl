@@ -2102,6 +2102,13 @@ class Inicio(Screen):
 				materia_sort.sort()
 				self.remover_topico_.content_cls.ids.spinnerMaterias_.values = materia_sort
 			except AttributeError:pass
+			try:
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Teoria" or self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Exercicios":
+					new_data_refreshed = pickle.load((open("data_subjects_topics.p", "rb")))
+					materia_sort = list(new_data_refreshed.keys())
+					materia_sort.sort()
+					self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.values = materia_sort
+			except AttributeError: pass
 
 	class Topicos_Spinner(Spinner):
 		def __init__(self, **kwargs):
@@ -2179,6 +2186,21 @@ class Inicio(Screen):
 				if materia2remove == self.criar_novo_topico.content_cls.ids.spinnerMaterias_.text:
 					self.criar_novo_topico.content_cls.ids.spinnerMaterias_.text = "Matérias"
 			except AttributeError: pass
+			try:
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Teoria" or  self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Exercicios":
+					self.data_refreshed = pickle.load((open("data_subjects_topics.p", "rb")))
+					self.subjects_sort = list(self.data_refreshed.keys())
+					self.subjects_sort.sort()
+					self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.values = self.subjects_sort
+					if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text == materia2remove:
+
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text = "Matérias"
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_topico.text = "Tópicos"
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_topico.values = []
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.values = self.subjects_sort
+
+			except AttributeError:
+				pass
 
 	# CRIAR TÓPICO
 	criar_novo_topico = None
@@ -2237,6 +2259,15 @@ class Inicio(Screen):
 						self.remover_topico_.content_cls.ids.spinnerTopicos_.text = "Tópicos"
 						self.remover_topico_.content_cls.ids.spinnerTopicos_.values = self.data_refreshed
 				except AttributeError: pass
+				try:
+					if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Teoria" or self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Exercicios":
+						if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text == materia_escolhida:
+							self.data_refreshed = pickle.load((open("data_subjects_topics.p", "rb")))
+							self.data_refreshed = list(self.data_refreshed[materia_escolhida][1])
+							self.data_refreshed.sort()
+							self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_topico.values = self.data_refreshed
+				except AttributeError:
+					pass
 
 
 	# REMOVER TÓPICO
@@ -2288,6 +2319,18 @@ class Inicio(Screen):
 			self.remover_topico_.content_cls.ids.spinnerTopicos_.text = "Tópicos"
 			self.remover_topico_.content_cls.ids.spinnerTopicos_.values = self.data_refreshed
 			toast('Tópico {} removido com sucesso da matéria {}'.format(topico_escolhido, materia_escolhida))
+		try:
+			if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Teoria" or self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Exercicios":
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text == materia_escolhida:
+					self.data_refreshed = pickle.load((open("data_subjects_topics.p", "rb")))
+					self.data_refreshed = list(self.data_refreshed[materia_escolhida][1])
+					self.data_refreshed.sort()
+					self.manager.get_screen(
+						'Cronograma').adicionar_item.content_cls.ids.spinner_topico.values = self.data_refreshed
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_topico.text == topico_escolhido:
+					self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_topico.text = "Tópicos"
+		except AttributeError:
+			pass
 
 
 	materia_next_event_name = StringProperty('Sem Matéria')
@@ -2351,12 +2394,10 @@ class Cronograma(Screen):
 	index_value = StringProperty()
 
 	info_cronograma_item = None
-
 	class Conteudo_InfoCronograma(MDFloatLayout):
 		cor_aplicativo = '686fa3'
 		cor_widget = 'eef2fe'
 		info_data = StringProperty('26/02/2022')
-
 	def info_cronograma(self, *args):
 		try:
 			if not self.info_cronograma_item:
@@ -2387,8 +2428,6 @@ class Cronograma(Screen):
 	next_event_name = StringProperty()
 	next_event_data = StringProperty()
 	next_event_time = StringProperty()
-
-	#def calcularTaxaAcerto(acertos, erros):
 
 	def alterar_quantidade_function(self, *args):
 		def rebuildDataStyle(lista, color_hex='686fa3'):
@@ -2518,7 +2557,9 @@ class Cronograma(Screen):
 				toast("Atenção: Esse Item Não Possui Questões")
 		except IndexError: pass
 
-
+	saveData_ = []
+	saveTime_ = []
+	saveDuration_ = []
 	# ////////////////////////////////////////////////////////////////////////////
 	# TABELA CRONOGRAMA
 	class Tabela_Cronograma(MDBoxLayout):
@@ -2546,6 +2587,475 @@ class Cronograma(Screen):
 				row_data=AutoSizeTableRowsNum_Cronograma(self.data_today, grid.rows_per_page_cronograma + 1))
 			#self.data_table_cronograma.bind(on_row_press=self.on_row_press)
 			self.add_widget(data_table_cronograma)
+
+	# FUNÇÕES E WIDGETS RELACIONADOS PARA CRIAR NOVA MATERIA
+	adicionar_item = None
+	class Conteudo_AdicionarItem(MDFloatLayout, HoverBehavior):
+		saveData = []
+		saveTime = []
+		saveDuration = []
+		duration_dialog_ = None
+		tema = pickle.load((open("tema.p", "rb")))
+		cor_aplicativo = StringProperty(tema[0].cor_aplicativo)
+
+		class Conteudo_Duration(MDFloatLayout, HoverBehavior):
+			pass
+		def duration_dialog(self, root, *args):
+			if not self.duration_dialog_:
+				self.tema = pickle.load((open("tema.p", "rb")))
+				self.duration_dialog_ = MDDialog(
+					title=f'[color={self.cor_aplicativo}]Duração Do Seu Item[/color]',
+					md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
+					type="custom",
+					content_cls=self.Conteudo_Duration(),
+					auto_dismiss=True,
+					buttons=[
+						MDFlatButton(
+							text=f"[color={self.cor_aplicativo}][b]CANCELAR[/color][/b]",
+							theme_text_color="Custom",
+							on_release=self.close_duration_dialog
+						),
+						MDFlatButton(
+							text=f"[color={self.cor_aplicativo}][b]CONCLUIR[/color][/b]",
+							theme_text_color="Custom",
+							on_press = self.on_saveDuration,
+							on_release=self.close_duration_dialog
+						)
+					]
+				)
+
+			self.duration_dialog_.open()
+		def close_duration_dialog(self, obj):
+			self.duration_dialog_.dismiss()
+		def on_saveDuration(self, *args):
+			horas = self.duration_dialog_.content_cls.ids.horas_.text
+			minutos = self.duration_dialog_.content_cls.ids.minutos_.text
+			self.saveDuration.clear()
+			self.saveDuration.append(horas+":"+minutos)
+			Cronograma.saveDuration_.clear()
+			Cronograma.saveDuration_.append(horas+":"+minutos)
+		def get_time(self, instance, time):
+			return time
+		def on_saveTime(self, instance, time):
+			self.saveTime.clear()
+			self.saveTime.append(str(time))
+			Cronograma.saveTime_.clear()
+			Cronograma.saveTime_.append(str(time))
+		def show_time_picker(self):
+			from datetime import datetime
+
+			time_dialog = MDTimePicker()
+			time_dialog.bind(time=self.get_time, on_save=self.on_saveTime)
+
+			self.tema = pickle.load((open("tema.p", "rb")))
+			# COR DOS MENUS
+			time_dialog.primary_color = get_color_from_hex('#{}'.format(self.tema[0].cor_fundo_menu_deg1))
+			time_dialog.accent_color = get_color_from_hex('#{}'.format(self.tema[0].cor_widget))
+			time_dialog.selector_color = get_color_from_hex('#{}'.format(self.tema[0].cor_aplicativo))
+			time_dialog.text_toolbar_color = get_color_from_hex('#{}'.format(self.tema[0].cor_widget_hover))
+
+			# COR DOS TEXTOS
+			time_dialog.text_color = get_color_from_hex('#{}'.format(self.tema[0].cor_aplicativo))
+			time_dialog.text_current_color = get_color_from_hex('#{}'.format(self.tema[0].cor_fundo_menu_deg2))
+			time_dialog.text_button_color = get_color_from_hex('#{}'.format(self.tema[0].cor_widget_hover))
+
+			def convertMilitaryHour(string):
+				converter = {'13': '01', '14': '02', '15': '03', '16': '04', '17': '05', '18': '06', '19': '07',
+							 '20': '08',
+							 '21': '09', '22': '10', '23': '11', '00': '12'}
+				string_split = string.split(':')
+				if string_split[0] in list(converter.keys()):
+					string_split[0] = converter[string_split[0]]
+
+					time_dialog.am_pm = 'pm'
+
+				return ':'.join(string_split)
+
+			try:
+				string = convertMilitaryHour(str(self.saveTime[0]))
+				previous_time = datetime.strptime(string, '%H:%M:%S').time()
+				time_dialog.set_time(previous_time)
+
+			except AttributeError:
+				pass
+
+			except IndexError:
+				pass
+
+			time_dialog.open()
+		def on_saveData(self, instance, value, date_range):
+			self.saveData.clear()
+			self.saveData.append(value)
+			Cronograma.saveData_.clear()
+			Cronograma.saveData_.append(value)
+		def on_cancel(self, instance, value):
+			pass
+		def show_date_picker(self):
+			def month(string):
+				if len(string) == 2:
+					if string[0] == '0':
+						return string[1]
+
+					else:
+						return string
+			def takeday():
+				try:
+					return int(month(str(self.saveData[0])[8:10]))
+
+				except AttributeError:
+					pass
+
+				except IndexError:
+					pass
+
+			date_dialog = MDDatePicker(day=takeday())
+			date_dialog.bind(on_save=self.on_saveData, on_cancel=self.on_cancel)
+
+			date_dialog.min_year = 2019
+			date_dialog.max_year = 2037
+			# date_dialog.mode = 'range'
+
+			self.tema = pickle.load((open("tema.p", "rb")))
+			# COR DOS MENUS
+			date_dialog.primary_color = ("#{}".format(self.tema[0].cor_fundo_menu_deg1))
+			date_dialog.accent_color = get_color_from_hex("#{}".format(self.tema[0].cor_widget))
+			date_dialog.selector_color = get_color_from_hex("#{}".format(self.tema[0].cor_fundo_menu_deg2))
+			date_dialog.text_toolbar_color = get_color_from_hex("#{}".format(self.tema[0].cor_widget))
+
+			# COR DOS TEXTOS
+			date_dialog.text_color = get_color_from_hex("#{}".format(self.tema[0].cor_aplicativo))
+			date_dialog.text_current_color = get_color_from_hex("#{}".format(self.tema[0].cor_aplicativo))
+			date_dialog.text_button_color = get_color_from_hex("#{}".format(self.tema[0].cor_aplicativo))
+			try:
+				date_dialog.year = int(str(self.saveData[0])[0:4])
+				date_dialog.month = int(month(str(str(self.saveData[0])[5:7])))
+			except AttributeError:pass
+			except IndexError:pass
+
+			date_dialog.open()
+		def update_materia(self, *args):
+			spinner_name = self.ids.spinner_materia.text
+			self.data = pickle.load((open("data_subjects_topics.p", "rb")))
+
+			if spinner_name != "Matérias" and spinner_name != "Nome Simulado":
+				if self.ids.spinner_categoria.text == 'Teoria' or self.ids.spinner_categoria.text == 'Exercicios':
+					self.ids.spinner_topico.text = "Tópicos"
+					self.ids.spinner_topico.values = self.data[self.ids.spinner_materia.text][1]
+
+			if self.ids.spinner_categoria.text == 'Simulado': pass
+		def update_categoria(self, *args):
+			spinner_name = self.ids.spinner_categoria.text
+			self.data = pickle.load((open("data_subjects_topics.p", "rb")))
+			self.simulados = pickle.load((open("simulados.p", "rb")))
+
+			if spinner_name == 'Teoria' or spinner_name == 'Exercicios' or spinner_name == "Categorias":
+				self.ids.spinner_materia.text = "Matérias"
+				self.ids.spinner_topico.text = "Tópicos"
+				self.ids.spinner_materia.values = tuple(self.data.keys())
+
+
+			if spinner_name == 'Simulado':
+				self.ids.spinner_materia.values = self.simulados
+				self.ids.spinner_topico.text = ""
+				self.ids.spinner_materia.text = 'Nome Simulado'
+				self.ids.spinner_topico.values = []
+	class CategoriasSpinner(Spinner):
+		def __init__(self, **kwargs):
+			super().__init__(**kwargs)
+			self.values = ['Teoria', 'Exercicios', 'Simulado']
+			self.dropdown_cls = SpinnerDropdown
+			self.option_cls = SpinnerOptions
+			self.tema = pickle.load((open("tema.p", "rb")))
+			self.text = "Categoria"
+			self.color = self.tema[0].cor_aplicativo_tuple
+			self.bold = True
+			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
+			#self.text = "Categorias"
+	class AllMateriasSpinner(Spinner):
+		def __init__(self, **kwargs):
+			super().__init__(**kwargs)
+			self.dropdown_cls = SpinnerDropdown
+			self.option_cls = SpinnerOptions
+			self.tema = pickle.load((open("tema.p", "rb")))
+			self.color = self.tema[0].cor_aplicativo_tuple
+			self.bold = True
+			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
+			self.text = "Matérias"
+	class TopicosSpinner(Spinner):
+		def __init__(self, **kwargs):
+			super().__init__(**kwargs)
+			self.dropdown_cls = SpinnerDropdown
+			self.option_cls = SpinnerOptions
+			self.tema = pickle.load((open("tema.p", "rb")))
+			self.color = self.tema[0].cor_aplicativo_tuple
+			self.bold = True
+			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
+			self.text = "Tópicos"
+	def adicionar_item_dialog(self, root, *args):
+		if not self.adicionar_item:
+			self.tema = pickle.load((open("tema.p", "rb")))
+			self.adicionar_item = MDDialog(
+				title=f'[color={self.cor_aplicativo}]Novo Item Cronograma[/color]',
+				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
+				type="custom",
+				auto_dismiss=False,
+				content_cls=self.Conteudo_AdicionarItem(),
+				buttons=[
+					MDFlatButton(
+						text=f"[color={self.cor_aplicativo}][b]CANCELAR[/color][/b]",
+						theme_text_color="Custom",
+						on_release=self.close_criar_materia_
+					),
+					MDFlatButton(
+						text=f"[color={self.cor_aplicativo}][b]ADICIONAR ITEM[/color][/b]",
+						theme_text_color="Custom",
+						on_release=root.add_to_cronograma
+					)
+				]
+			)
+		self.adicionar_item.open()
+	def add_to_cronograma(self, *args):
+		def checkData(self):
+			data_cronograma = pickle.load((open("data_timeline.p", "rb")))
+			data_cronograma_list = []
+			data_only_data_and_time = []
+			for y in range(len(data_cronograma)):
+				data_cronograma_list.append([])
+				data_only_data_and_time.append([])
+				for x in range(len(data_cronograma[y])):
+					if x == 6:
+						data_cronograma_list[y].append(list(data_cronograma[y][x]))
+					else:
+						data_cronograma_list[y].append(data_cronograma[y][x])
+			# REMOVER TODAS AS COLUNAS EXCETO DATA E HORÁRIO
+			for index in range(len(data_cronograma_list)):
+				for item in range(0, 2):
+					data_only_data_and_time[index].append(data_cronograma_list[index][item])
+			return data_only_data_and_time
+		lista_data_to_check = checkData(self)
+
+		data = self.saveData_
+		horario = self.saveTime_
+		duracao = self.saveDuration_
+		categoria = self.adicionar_item.content_cls.ids.spinner_categoria.text
+		materia = self.adicionar_item.content_cls.ids.spinner_materia.text
+		topico = self.adicionar_item.content_cls.ids.spinner_topico.text
+
+		if categoria != "Simulados":
+			if len(self.saveData_) > 0 and len(self.saveTime_) > 0 and len(self.saveDuration_) > 0 and categoria != "Categoria" and materia != "Matérias" and topico != "Tópicos" and duracao[0] != "00:00":
+				horas = duracao[0].split(":")[0]
+				minutos = duracao[0].split(":")[1]
+				lista_data = [[]]
+				lista_data[0].append(str(self.saveData_[0]))
+				lista_data[0].append(self.saveTime_[0])
+
+				if lista_data[0] not in lista_data_to_check:
+					if len(horas) == 1:
+						horas = '0' + horas
+					if len(horas) == 2:
+						horas = horas
+					if len(minutos) == 1:
+						minutos = '0' + minutos
+					if len(minutos) == 2:
+						minutos = minutos
+
+					duration = horas + ':' + minutos + ':00'
+					self.data_cronograma = pickle.load((open("data_timeline.p", "rb")))
+					self.data_cronograma.append((str(data[0]), str(horario[0]), categoria, materia, topico, duration,("alert-circle", [1, 0, 0, 1], "Não Estudado"), '0', '0', '0.0 %'))
+					pickle.dump(self.data_cronograma, open("data_timeline.p", "wb"))
+					toast("Novo Item Adicionado Com Sucesso!")
+
+					# RESETAR PADROES DEFAULT
+					#self.saveData.clear()
+					#self.saveTime.clear()
+					#self.saveDuration.clear()
+					if bool(self.saveData_[0] == str(date.today())) == True:
+						print('v2')
+
+					try:
+						self.data_cronograma = pickle.load((open("data_timeline.p", "rb")))
+						DataSearched = SearchByData(self.data_cronograma, str(self.data_selecionada))
+						print('tou aqui')
+						self.ids.cronograma22.children[0].children[0].update_row_data(self, AutoSizeTableRowsNum_Cronograma(DataSearched, grid.rows_per_page_cronograma + 1))
+
+						# ALTERAR A QUANTIDADE DE ESTUDADOS E NÃO ESTUDADOS
+						try:
+							try:
+								def count_Estudado(state, data):
+									data_v = pickle.load((open("data_timeline.p", "rb")))
+									count_estudado = 0
+									count_naoestudado = 0
+
+									for x in range(len(data_v)):
+										if data_v[x][0] == str(data):
+											if data_v[x][6][2] == 'Estudado':
+												count_estudado += 1
+
+									for x in range(len(data_v)):
+										if data_v[x][0] == str(data):
+											if data_v[x][6][2] == 'Não Estudado':
+												count_naoestudado += 1
+
+									try:
+										total = count_estudado + count_naoestudado
+
+										if total == 0:
+											total = len(data_v)
+
+										if state == True:
+											valor = round(float(count_estudado / total * 100), 2)
+											return str(valor) + ' %'
+
+										elif state == False:
+											valor = round(float(count_naoestudado / total * 100), 2)
+											return str(valor) + ' %'
+									except ZeroDivisionError:
+										total = 1
+
+								self.estudado = count_Estudado(True, str(self.data_selecionada))
+								self.nao_estudado = count_Estudado(False, str(self.data_selecionada))
+							except ValueError:
+								pass
+						except AttributeError:
+							def count_Estudado(state):
+								data_v = pickle.load((open("data_timeline.p", "rb")))
+								count_estudado = 0
+								count_naoestudado = 0
+
+								from datetime import date
+								today = date.today()
+
+								for x in range(len(data_v)):
+									if data_v[x][0] == str(today):
+										if data_v[x][6][2] == 'Estudado':
+											count_estudado += 1
+
+								for x in range(len(data_v)):
+									if data_v[x][0] == str(today):
+										if data_v[x][6][2] == 'Não Estudado':
+											count_naoestudado += 1
+
+								try:
+									total = count_estudado + count_naoestudado
+
+									if total == 0:
+										total = len(data_v)
+
+									if state == True:
+										valor = round(float(count_estudado / total * 100), 2)
+										return str(valor) + ' %'
+
+									elif state == False:
+										valor = round(float(count_naoestudado / total * 100), 2)
+										return str(valor) + ' %'
+								except ZeroDivisionError:
+									total = 1
+
+							try:
+								self.estudado = count_Estudado(True)
+								self.nao_estudado = count_Estudado(False)
+							except ValueError:
+								pass
+						def refreshChecks(dt):
+							try: self.ids.cronograma22.children[0].children[0].DoubleClickRefreshChecks()
+							except IndexError: pass
+						Clock.schedule_once(refreshChecks, 1.10)
+					except AttributeError:
+						self.data_vv = pickle.load((open("data_timeline.p", "rb")))
+
+						DataSearched_Hoje = SearchByData(self.data_vv, str(date.today))
+						print(DataSearched_Hoje)
+						print('aaaaaaaaaaa')
+						self.ids.cronograma22.children[0].children[0].update_row_data(self, AutoSizeTableRowsNum_Cronograma(DataSearched_Hoje,grid.rows_per_page_cronograma + 1))
+						# ALTERAR A QUANTIDADE DE ESTUDADOS E NÃO ESTUDADOS
+						try:
+							try:
+								def count_Estudado(state, data):
+									data_v = pickle.load((open("data_timeline.p", "rb")))
+									count_estudado = 0
+									count_naoestudado = 0
+
+									for x in range(len(data_v)):
+										if data_v[x][0] == str(data):
+											if data_v[x][6][2] == 'Estudado':
+												count_estudado += 1
+
+									for x in range(len(data_v)):
+										if data_v[x][0] == str(data):
+											if data_v[x][6][2] == 'Não Estudado':
+												count_naoestudado += 1
+
+									try:
+										total = count_estudado + count_naoestudado
+
+										if total == 0:
+											total = len(data_v)
+
+										if state == True:
+											valor = round(float(count_estudado / total * 100), 2)
+											return str(valor) + ' %'
+
+										elif state == False:
+											valor = round(float(count_naoestudado / total * 100), 2)
+											return str(valor) + ' %'
+									except ZeroDivisionError:
+										total = 1
+
+								self.estudado = count_Estudado(True, str(self.data_selecionada))
+								self.nao_estudado = count_Estudado(False, str(self.data_selecionada))
+							except ValueError:
+								pass
+						except AttributeError:
+							def count_Estudado(state):
+								data_v = pickle.load((open("data_timeline.p", "rb")))
+								count_estudado = 0
+								count_naoestudado = 0
+
+								from datetime import date
+								today = date.today()
+
+								for x in range(len(data_v)):
+									if data_v[x][0] == str(today):
+										if data_v[x][6][2] == 'Estudado':
+											count_estudado += 1
+
+								for x in range(len(data_v)):
+									if data_v[x][0] == str(today):
+										if data_v[x][6][2] == 'Não Estudado':
+											count_naoestudado += 1
+
+								try:
+									total = count_estudado + count_naoestudado
+
+									if total == 0:
+										total = len(data_v)
+
+									if state == True:
+										valor = round(float(count_estudado / total * 100), 2)
+										return str(valor) + ' %'
+
+									elif state == False:
+										valor = round(float(count_naoestudado / total * 100), 2)
+										return str(valor) + ' %'
+								except ZeroDivisionError:
+									total = 1
+
+							try:
+								self.estudado = count_Estudado(True)
+								self.nao_estudado = count_Estudado(False)
+							except ValueError:
+								pass
+						def refreshChecks(dt):
+							try: self.ids.cronograma22.children[0].children[0].DoubleClickRefreshChecks()
+							except IndexError: pass
+						Clock.schedule_once(refreshChecks, 1.10)
+				else:
+					toast("Atenção: Já existe um evento para o dia {} às {}".format(changeData(str(self.saveData[0])), changeTime(self.saveTime[0])))
+			else:
+				toast("Atenção: Todos os campos devem ser preenchidos")
+
+	def close_criar_materia_(self, obj):
+		self.adicionar_item.dismiss()
 
 	# ////////////////////////////////////////////////////////////////////////////
 	# FUNÇÕES E WIDGETS RELACIONADOS PARA REMOVER ITEM DO CRONOGRAMA
@@ -4261,6 +4771,7 @@ class Simulados(Screen):
 			pickle.dump(simulados, open("simulados.p", "wb"))
 			self.remover_simulado_dialog.content_cls.ids.spinnerSimulados.text = 'Simulados'
 			new_data_refreshed = pickle.load((open("simulados.p", "rb")))
+			new_data_refreshed.sort()
 			self.remover_simulado_dialog.content_cls.ids.spinnerSimulados.values = new_data_refreshed
 
 			toast('Simulado {} Removido Com Sucesso!'.format(simulado_name))
@@ -4270,6 +4781,16 @@ class Simulados(Screen):
 				self.ids.spinnerSimulados2.values = new_data_refreshed
 			else:
 				self.ids.spinnerSimulados2.values = new_data_refreshed
+
+			try:
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Simulado":
+					if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text == simulado_name:
+						new_data_refreshed = pickle.load((open("simulados.p", "rb")))
+						new_data_refreshed.sort()
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.text = "Nome Simulado"
+						self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.values = new_data_refreshed
+			except AttributeError:
+				pass
 			#elf.criar_novo_simulado_dialog.dismiss()
 		else:
 			toast('Atenção: Nenhum Simulado Selecionado!')
@@ -4321,6 +4842,13 @@ class Simulados(Screen):
 			self.criar_novo_simulado_dialog.content_cls.ids.simulado_name.text = ''
 			toast('Simulado {}, Criado Com Sucesso!'.format(new_simulado_name))
 			self.criar_novo_simulado_dialog.dismiss()
+			try:
+				if self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_categoria.text == "Simulado":
+					new_data_refreshed = pickle.load((open("simulados.p", "rb")))
+					new_data_refreshed.sort()
+					self.manager.get_screen('Cronograma').adicionar_item.content_cls.ids.spinner_materia.values = new_data_refreshed
+			except AttributeError:
+				pass
 
 	# FUNÇÃO PARA ADICIONAR NOVO SIMULADO AO CRONOGRAMA
 	def adicionar_item(self):
