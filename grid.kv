@@ -2430,11 +2430,11 @@ WindowManager:
                                                 font_size: int(self.parent.width/2 * 0.15)
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
                                             padding: [13,0]
                                             Image:
                                                 source: 'icons/taxa_acertos_2.png'
-                                                size: self.parent.size
+                                                size_hint: (5,5)
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -2465,19 +2465,19 @@ WindowManager:
                                             padding: 30
                                             MDLabel:
                                                 markup: True
-                                                text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.horas_estudadas, root.horas_estudadas_ThisWeek)
+                                                text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.horas_estudadas, root.horas_estudadas_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 17
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
-                                            padding: [17,0]
+                                            size_hint: (0.75,1)
+                                            padding: [10,0]
                                             Image:
                                                 source: 'icons/cronometro_1.png'
                                                 size: self.parent.size
-                                                pos_hint: {'center_x': .3,'center_y': .35}
+                                                pos_hint: {'center_x': -.3,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
                                                 center_x: self.parent.center_x
@@ -2507,19 +2507,19 @@ WindowManager:
                                             padding: 30
                                             MDLabel:
                                                 markup: True
-                                                text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.questoes_realizadas, root.questoes_realizadas_ThisWeek)
+                                                text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.questoes_realizadas, root.questoes_realizadas_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 17
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [19,0]
+                                            size_hint: (0.75,1)
+                                            padding: [13,0]
                                             Image:
+                                                size_hint: (5,5)
                                                 source: 'icons/questoes_realizadas_1.png'
-                                                size: self.parent.size
-                                                pos_hint: {'center_x': .04,'center_y': .35}
+                                                pos_hint: {'center_x': -.09,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
                                                 center_x: self.parent.center_x
@@ -2549,18 +2549,18 @@ WindowManager:
                                             padding: 30
                                             MDLabel:
                                                 markup: True
-                                                text: 'Simulados Realizados\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.simulados_realizados, root.simulados_realizados_ThisWeek)
+                                                text: 'Simulados Realizados\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.simulados_realizados, root.simulados_realizados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 17
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [15,0]
+                                            size_hint: (0.75,1)
+                                            padding: [10,0]
                                             Image:
                                                 source: 'icons/simu_realizados.png'
-                                                size: self.parent.size
+                                                size_hint: (5,5)
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -3221,7 +3221,7 @@ WindowManager:
                                 #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                 # BOX LAYOUT PARA COLOR BOTOES DE MATERIAS ESTUDADAS | MATERIAS NÃO ESTUDAS | SUA PROXIMA MATÉRIA DE ESTUDO É
                                 MDBoxLayout:
-                                    size_hint: (1,2.8)
+                                    size_hint: (1,2 )
                                     md_bg_color: 0,0,0,0
                                     # GRID SEPARADOR PARA COLOCAR OS TRÊS BOTOES SUPERIORES DE MATERIAS ESTUDADAS, ETC...
                                     GridLayout:
@@ -3348,7 +3348,7 @@ WindowManager:
                                         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                         # BOX PARA COLOCAR LABEL DE SEU CRONOGRAMA + DATA ()
                                         MDBoxLayout:
-                                            size_hint: (4.99,1)
+                                            size_hint: (4.99,0.8)
                                             md_bg_color: 0,0,0,0
                                             spacing: 10
                                             # CRONOGRAMA (
@@ -3461,7 +3461,7 @@ WindowManager:
                                         MDBoxLayout:
                                             orientation: 'vertical'
                                             id: cronograma22
-                                            size_hint: (5,1)
+                                            size_hint: (9,3)
                                             md_bg_color: 0,0,0,0
                                             canvas.before:
                                                 Color:
@@ -4102,19 +4102,18 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(int(self.parent.width/2 * 0.25), root.taxa_acertos_simulados, root.taxa_acertos_simulados_ThisWeek)
+                                                text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(25, root.taxa_acertos_simulados, root.taxa_acertos_simulados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
-
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [10,0]
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                            padding: [9,0]
                                             Image:
                                                 source: 'icons/taxa_acertos_1.png'
-                                                size: self.parent.size
+                                                size_hint: (5,5)
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4146,18 +4145,17 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.horas_estudadas_simulados, root.horas_estudadas_simulados_ThisWeek)
+                                                text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.horas_estudadas_simulados, root.horas_estudadas_simulados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [10,0]
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                            padding: [9,0]
                                             Image:
                                                 source: 'icons/cronometro_1.png'
-                                                size: self.parent.size
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4189,18 +4187,17 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Simulados Realizados\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.simulados_realizados, root.simulados_realizados_ThisWeek)
+                                                text: 'Simulados Realizados\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.simulados_realizados, root.simulados_realizados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [8,0]
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                            padding: [9,0]
                                             Image:
                                                 source: 'icons/simu_realizados.png'
-                                                size: self.parent.size
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4214,7 +4211,6 @@ WindowManager:
                                 orientation: 'vertical'
                                 md_bg_color: 0,0,0,0
                                 spacing: 20
-
                                 #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                 # SIMULADOS - QUESTOES REALIZADAS
                                 MDBoxLayout_Hover:
@@ -4239,18 +4235,17 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.questoes_realizadas_simulados, root.questoes_realizadas_simulados_ThisWeek)
+                                                text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.questoes_realizadas_simulados, root.questoes_realizadas_simulados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
                                             padding: [10,0]
                                             Image:
                                                 source: 'icons/questoes_realizadas_1.png'
-                                                size: self.parent.size
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4282,18 +4277,17 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Total de Acertos\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.acertos_simulados, root.acertos_simulados_ThisWeek)
+                                                text: 'Total de Acertos\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.acertos_simulados, root.acertos_simulados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [10,0]
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                            padding: [9,0]
                                             Image:
                                                 source: 'icons/happy.png'
-                                                size: self.parent.size
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4325,18 +4319,17 @@ WindowManager:
                                             padding: 20
                                             MDLabel:
                                                 markup: True
-                                                text: 'Total de Erros\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.erros_simulados, root.erros_simulados_ThisWeek)
+                                                text: 'Total de Erros\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.erros_simulados, root.erros_simulados_ThisWeek)
                                                 halign: 'left'
                                                 valign: 'middle'
                                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                                font_size: int(self.parent.width/2 * 0.15)
+                                                font_size: 18
                                         MDBoxLayout:
                                             md_bg_color: 0,0,0,0
-                                            size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                            padding: [10,0]
+                                            size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                            padding: [9,0]
                                             Image:
                                                 source: 'icons/sad.png'
-                                                size: self.parent.size
                                                 pos_hint: {'center_x': .04,'center_y': .35}
                                                 allow_stretch: True
                                                 allow_ratio: False
@@ -4409,10 +4402,9 @@ WindowManager:
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
                                     size_hint: (int(0.015* self.parent.width/2), int(0.015* self.parent.width/2))
-                                    padding: [10,0]
+                                    padding: [7,0]
                                     Image:
                                         source: 'icons/new_simulado.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .05,'center_y': .5}
                                         allow_stretch: True
                                         allow_ratio: False
@@ -4435,7 +4427,6 @@ WindowManager:
                                     radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                                     size: (self.size)
                                     pos: (self.pos)
-
                             GridLayout:
                                 rows:1
                                 cols:2
@@ -4451,21 +4442,18 @@ WindowManager:
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
                                         font_size: int(self.parent.width/2 * 0.22)
-
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
                                     size_hint: (int(0.015* self.parent.width/2), int(0.015* self.parent.width/2))
-                                    padding: [8,0]
+                                    padding: [5,0]
                                     Image:
                                         source: 'icons/delete_simulado.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .05,'center_y': .5}
                                         allow_stretch: True
                                         allow_ratio: False
                                         center_x: self.parent.center_x
                                         center_y: self.parent.center_y
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-
                         # ESPAÇADOR
                         MDBoxLayout:
                             orientation: 'horizontal'
@@ -4881,15 +4869,13 @@ WindowManager:
                                     radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                                     size: (self.size)
                                     pos: (self.pos)
-
                             MDLabel:
                                 markup: True
                                 text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]'.format(int(self.parent.width/2 * 0.24), root.taxa_acertos_geral)
                                 halign: 'left'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                font_size: int(self.parent.width/2 * 0.14)
-
+                                font_size: 18
 
                         # GERAL - HORAS ESTUDADAS
                         MDBoxLayout_Hover:
@@ -4904,14 +4890,13 @@ WindowManager:
                                     radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                                     size: (self.size)
                                     pos: (self.pos)
-
                             MDLabel:
                                 markup: True
                                 text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]'.format(int(self.parent.width/2 * 0.24), root.horas_estudadas_geral)
                                 halign: 'left'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                font_size: int(self.parent.width/2 * 0.14)
+                                font_size: 18
 
                         # GERAL - QUESTOES REALIZADAS
                         MDBoxLayout_Hover:
@@ -4932,7 +4917,7 @@ WindowManager:
                                 halign: 'left'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                font_size: int(self.parent.width/2 * 0.14)
+                                font_size: 18
 
 
                         # GERAL - GERAR RELATÓRIO
@@ -4994,26 +4979,23 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(int(self.parent.width/2 * 0.25), root.taxa_acertos_materias, root.taxa_acertos_materias_ThisWeek)
+                                        text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(25, root.taxa_acertos_materias, root.taxa_acertos_materias_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                        font_size: int(self.parent.width/2 * 0.15)
-
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [9,0]
                                     Image:
                                         source: 'icons/taxa_acertos_1.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
                                         center_x: self.parent.center_x
                                         center_y: self.parent.center_y
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-
 
                         # MATÉRIA - HORAS ESTUDADAS
                         MDBoxLayout_Hover:
@@ -5038,25 +5020,23 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.horas_estudadas_materias, root.horas_estudadas_materias_ThisWeek)
+                                        text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.horas_estudadas_materias, root.horas_estudadas_materias_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                        font_size: int(self.parent.width/2 * 0.15)
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [9,0]
                                     Image:
                                         source: 'icons/cronometro_1.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
                                         center_x: self.parent.center_x
                                         center_y: self.parent.center_y
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-
                         # MATÉRIA - QUESTOES REALIZADAS
                         MDBoxLayout_Hover:
                             orientation: 'horizontal'
@@ -5080,25 +5060,23 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.questoes_realizadas_materias, root.questoes_realizadas_materias_ThisWeek)
+                                        text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.questoes_realizadas_materias, root.questoes_realizadas_materias_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                        font_size: int(self.parent.width/2 * 0.15)
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [11,0]
                                     Image:
                                         source: 'icons/questoes_realizadas_1.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
                                         center_x: self.parent.center_x
                                         center_y: self.parent.center_y
                                         color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-
                         # MATÉRIA - ACERTOS E ERROS
                         MDBoxLayout:
                             orientation: 'horizontal'
@@ -5123,7 +5101,7 @@ WindowManager:
                                     halign: 'left'
                                     valign: 'middle'
                                     color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                    font_size: int(self.parent.width/2 * 0.24)
+                                    font_size: 18
 
                             # MATERIA - Erros
                             MDBoxLayout_Hover:
@@ -5144,7 +5122,7 @@ WindowManager:
                                     halign: 'left'
                                     valign: 'middle'
                                     color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                    font_size: int(self.parent.width/2 * 0.24)
+                                    font_size: 18
 
                     #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     # TERCEIRA COLUNA VERTICAL
@@ -5179,8 +5157,6 @@ WindowManager:
                                     on_press: self.background_color= get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
                                     on_text: root.atualizar_topicos_info(root)
 
-
-
                         # TÓPICO - TAXA DE ACERTO MÉDIA
                         MDBoxLayout_Hover_Blue:
                             on_enter: self.cor = app.menu_unselected_color
@@ -5204,18 +5180,17 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(int(self.parent.width/2 * 0.25), root.taxa_acertos_topicos, root.taxa_acertos_topicos_ThisWeek)
+                                        text: 'Taxa de Acerto Média\n[b][size={}]{}[/b][/size]\n{} essa semana'.format(25, root.taxa_acertos_topicos, root.taxa_acertos_topicos_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-                                        font_size: int(self.parent.width/2 * 0.15)
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [9,0]
                                     Image:
                                         source: 'icons/taxa_acertos_2.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
@@ -5246,18 +5221,17 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.horas_estudadas_topicos, root.horas_estudadas_topicos_ThisWeek)
+                                        text: 'Horas Estudadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.horas_estudadas_topicos, root.horas_estudadas_topicos_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-                                        font_size: int(self.parent.width/2 * 0.15)
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [9,0]
                                     Image:
                                         source: 'icons/cronometro_2.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
@@ -5288,25 +5262,23 @@ WindowManager:
                                     padding: 20
                                     MDLabel:
                                         markup: True
-                                        text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(int(self.parent.width/2 * 0.25), root.questoes_realizadas_topicos, root.questoes_realizadas_topicos_ThisWeek)
+                                        text: 'Questões Realizadas\n[b][size={}]{}[/b][/size]\n+{} essa semana'.format(25, root.questoes_realizadas_topicos, root.questoes_realizadas_topicos_ThisWeek)
                                         halign: 'left'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-                                        font_size: int(self.parent.width/2 * 0.15)
+                                        font_size: 18
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    size_hint: (int(0.006* self.parent.width/2), int(0.006* self.parent.width/2))
-                                    padding: [10,0]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    padding: [11,0]
                                     Image:
                                         source: 'icons/questoes_realizadas_2.png'
-                                        size: self.parent.size
                                         pos_hint: {'center_x': .04,'center_y': .35}
                                         allow_stretch: True
                                         allow_ratio: False
                                         center_x: self.parent.center_x
                                         center_y: self.parent.center_y
                                         color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-
 
                         # TÓPICO - ACERTOS E ERROS
                         MDBoxLayout:
@@ -5333,7 +5305,7 @@ WindowManager:
                                     halign: 'left'
                                     valign: 'middle'
                                     color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-                                    font_size: int(self.parent.width/2 * 0.24)
+                                    font_size: 18
 
                             # TÓPICO - ERROS
                             MDBoxLayout_Hover_Blue:
@@ -5354,7 +5326,7 @@ WindowManager:
                                     halign: 'left'
                                     valign: 'middle'
                                     color: get_color_from_hex('#{}'.format(app.cor_widgets_default))
-                                    font_size: int(self.parent.width/2 * 0.24)
+                                    font_size: 18
 
                 #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 # BARRA INFERIOR

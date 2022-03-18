@@ -5,16 +5,13 @@
     valign: "bottom"
     adaptive_size: True
 
-
 <AmPmSelectorLabel>
     halign: "center"
     valign: "center"
     theme_text_color: "Custom"
 
-
 <AmPmSelector>
     size_hint: None, None
-
     canvas.before:
         Color:
             rgba: root.border_color
@@ -22,7 +19,6 @@
             pos: self.pos
             size: self.size
             radius: [root.border_radius, ]
-
         #AM
         Color:
             rgba: root._am_bg_color
@@ -299,11 +295,12 @@
 
         MDIconButton:
             id: input_clock_switch
+            opacity: 0
             icon: "keyboard"
             pos: dp(12), dp(8)
             theme_text_color: "Custom"
             user_font_size: "24dp"
-            on_release: root._switch_input()
+            #on_release: root._switch_input()
             text_color:
                 root.text_toolbar_color if root.text_toolbar_color else \
                 root.theme_cls.secondary_text_color
