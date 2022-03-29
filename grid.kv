@@ -530,7 +530,7 @@
                                 radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                         MDLabel:
                             markup: True
-                            text: "[b]Insira O Caminho Da Sua Imagem[/b]"
+                            text: "[b]Insira O Seu Nome[/b]"
                             pos_hint: {"center_x":0.5, "center_y": 0.5}
                             font_size: 18
                             halign: "center"
@@ -554,7 +554,8 @@
                             id: user_picture_path
                             size: self.parent.size
                             pos_hint: {"center_x":0.5, "center_y": 0.58}
-                            font_size: 14
+                            font_size: 25
+                            max_text_length: 15
                             #required: True
                             helper_text: "Exemplo: " +root.path_example
                             helper_text_mode: 'persistent'
@@ -1282,8 +1283,9 @@
                                 radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                         MDLabel:
                             markup: True
-                            text: "[b] Temas Disponíveis:[/b]"
+                            text: "[b]Temas Disponíveis:[/b]"
                             pos_hint: {"center_x":0.5, "center_y": 0.5}
+                            halign: "center"
                             font_size: 18
                             color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                     # TEXT FIELD PARA COLOCAR NOME DO SIMULADO
@@ -1981,13 +1983,15 @@ WindowManager:
                                         center_x: root.center_x
                                         canvas:
                                             Color:
-                                                rgb: 1, 1, 1
+                                                rgb: get_color_from_hex('#{}'.format(app.cor_principal_icone_fundo))
                                             Ellipse:
                                                 pos: (self.pos)
                                                 size: (self.size)
-                                                source: root.user_picture
+                                                source: "logo.png"
                                                 angle_start: 0
                                                 angle_end: 360
+
+
                                     # BORDA DA FOTO DE PERFIL
                                     MDBoxLayout:
                                         pos_hint: {'center_x': .5,'center_y': .5}
@@ -2006,7 +2010,7 @@ WindowManager:
                             md_bg_color: 1,0,0,0
                             MDLabel:
                                 markup: True
-                                text: '[b]Invision Code[/b]'
+                                text: '[b]{}[/b]'.format(root.user_picture)
                                 halign: 'center'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -2893,13 +2897,14 @@ WindowManager:
                                         center_x: root.center_x
                                         canvas:
                                             Color:
-                                                rgb: 1, 1, 1
+                                                rgb: get_color_from_hex('#{}'.format(app.cor_principal_icone_fundo))
                                             Ellipse:
                                                 pos: (self.pos)
                                                 size: (self.size)
-                                                source: root.user_picture
+                                                source: "logo.png"
                                                 angle_start: 0
                                                 angle_end: 360
+
                                     # BORDA DA FOTO DE PERFIL
                                     MDBoxLayout:
                                         pos_hint: {'center_x': .5,'center_y': .5}
@@ -2919,7 +2924,7 @@ WindowManager:
                             md_bg_color: 1,0,0,0
                             MDLabel:
                                 markup: True
-                                text: '[b]Invision Study[/b]'
+                                text: '[b]{}[/b]'.format(root.user_picture)
                                 halign: 'center'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -3761,13 +3766,14 @@ WindowManager:
                                         center_x: root.center_x
                                         canvas:
                                             Color:
-                                                rgb: 1, 1, 1
+                                                rgb: get_color_from_hex('#{}'.format(app.cor_principal_icone_fundo))
                                             Ellipse:
                                                 pos: (self.pos)
                                                 size: (self.size)
-                                                source: root.user_picture
+                                                source: "logo.png"
                                                 angle_start: 0
                                                 angle_end: 360
+
                                     # BORDA DA FOTO DE PERFIL
                                     MDBoxLayout:
                                         pos_hint: {'center_x': .5,'center_y': .5}
@@ -3787,7 +3793,7 @@ WindowManager:
                             md_bg_color: 1,0,0,0
                             MDLabel:
                                 markup: True
-                                text: '[b]Invision Study[/b]'
+                                text: '[b]{}[/b]'.format(root.user_picture)
                                 halign: 'center'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -4555,13 +4561,14 @@ WindowManager:
                                         center_x: root.center_x
                                         canvas:
                                             Color:
-                                                rgb: 1, 1, 1
+                                                rgb: get_color_from_hex('#{}'.format(app.cor_principal_icone_fundo))
                                             Ellipse:
                                                 pos: (self.pos)
                                                 size: (self.size)
-                                                source: root.user_picture
+                                                source: "logo.png"
                                                 angle_start: 0
                                                 angle_end: 360
+
                                     # BORDA DA FOTO DE PERFIL
                                     MDBoxLayout:
                                         pos_hint: {'center_x': .5,'center_y': .5}
@@ -4581,7 +4588,7 @@ WindowManager:
                             md_bg_color: 1,0,0,0
                             MDLabel:
                                 markup: True
-                                text: '[b]Invision Study[/b]'
+                                text: '[b]{}[/b]'.format(root.user_picture)
                                 halign: 'center'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -5430,13 +5437,14 @@ WindowManager:
                                         center_x: root.center_x
                                         canvas:
                                             Color:
-                                                rgb: 1, 1, 1
+                                                rgb: get_color_from_hex('#{}'.format(app.cor_principal_icone_fundo))
                                             Ellipse:
                                                 pos: (self.pos)
                                                 size: (self.size)
-                                                source: root.user_picture
+                                                source: "logo.png"
                                                 angle_start: 0
                                                 angle_end: 360
+
                                     # BORDA DA FOTO DE PERFIL
                                     MDBoxLayout:
                                         pos_hint: {'center_x': .5,'center_y': .5}
@@ -5456,7 +5464,7 @@ WindowManager:
                             md_bg_color: 1,0,0,0
                             MDLabel:
                                 markup: True
-                                text: '[b]Invision Study[/b]'
+                                text: '[b]{}[/b]'.format(root.user_picture)
                                 halign: 'center'
                                 valign: 'middle'
                                 color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -5695,7 +5703,7 @@ WindowManager:
                         md_bg_color: 0,0,0,0
                         spacing: 20
                         ButtonGrid:
-                            on_release: self.cor = root.cor_widget;
+                            on_release: self.cor = root.cor_widget; root.insta()
                             on_enter: self.cor = root.cor_widget_hover;
                             on_leave: self.cor = root.cor_widget;
                             on_press: self.cor = root.cor_licenca;
@@ -5717,7 +5725,7 @@ WindowManager:
                                     padding: 26
                                     MDLabel:
                                         markup: True
-                                        text: 'Alterar\n[b][size={}]Resolução[/b][/size]'.format(int(self.parent.width/2 * 0.25))
+                                        text: 'Nosso\n[b][size={}]Instagram[/b][/size]'.format(int(self.parent.width/2 * 0.25))
                                         halign: 'center'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
@@ -5727,13 +5735,13 @@ WindowManager:
                                     padding: [10,10]
                                     size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
                                     Image:
-                                        source: 'icons/resolution.png'
+                                        source: 'icons/insta.png'
                                         size: self.parent.size
                                         allow_ratio: False
                                         allow_stretch: True
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                         ButtonGrid:
-                            on_release: self.cor = root.cor_widget;
+                            on_release: self.cor = root.cor_widget; root.youtube()
                             on_enter: self.cor = root.cor_widget_hover;
                             on_leave: self.cor = root.cor_widget;
                             on_press: self.cor = root.cor_licenca;
@@ -5755,17 +5763,17 @@ WindowManager:
                                     padding: 26
                                     MDLabel:
                                         markup: True
-                                        text: 'Alterar\n[b][size={}]Plano[/b][/size]'.format(int(self.parent.width/2 * 0.25))
+                                        text: 'Nosso\n[b][size={}]Youtube[/b][/size]'.format(int(self.parent.width/2 * 0.25))
                                         halign: 'center'
                                         valign: 'middle'
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                                         font_size: int(self.parent.width/2 * 0.25)
                                 MDBoxLayout:
                                     md_bg_color: 0,0,0,0
-                                    padding: [10,10]
+                                    padding: [5,5]
                                     size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
                                     Image:
-                                        source: 'icons/renova_plano.png'
+                                        source: 'icons/youtube.png'
                                         size: self.parent.size
                                         allow_ratio: False
                                         allow_stretch: True
@@ -5854,89 +5862,7 @@ WindowManager:
                                         allow_stretch: True
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                         ButtonGrid:
-                            on_release: self.cor = root.cor_widget;
-                            on_enter: self.cor = root.cor_widget_hover;
-                            on_leave: self.cor = root.cor_widget;
-                            on_press: self.cor = root.cor_licenca;
-                            canvas:
-                                Color:
-                                    rgb: get_color_from_hex('#{}'.format(self.cor))
-                                RoundedRectangle:
-                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
-                                    size: (self.size)
-                                    pos: (self.pos)
-                            GridLayout:
-                                rows:1
-                                cols:2
-                                spacing: 10
-                                padding: 18
-                                MDBoxLayout:
-                                    md_bg_color: 0,0,0,0
-                                    size_hint: (2.8,1)
-                                    padding: 26
-                                    MDLabel:
-                                        markup: True
-                                        text: 'Nosso\n[b][size={}]Youtube[/b][/size]'.format(int(self.parent.width/2 * 0.25))
-                                        halign: 'center'
-                                        valign: 'middle'
-                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
-                                        font_size: int(self.parent.width/2 * 0.25)
-                                MDBoxLayout:
-                                    md_bg_color: 0,0,0,0
-                                    padding: [5,5]
-                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
-                                    Image:
-                                        source: 'icons/youtube.png'
-                                        size: self.parent.size
-                                        allow_ratio: False
-                                        allow_stretch: True
-                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
-                        ButtonGrid:
-                            on_release: self.cor = root.cor_widget;
-                            on_enter: self.cor = root.cor_widget_hover;
-                            on_leave: self.cor = root.cor_widget;
-                            on_press: self.cor = root.cor_licenca;
-                            canvas:
-                                Color:
-                                    rgb: get_color_from_hex('#{}'.format(self.cor))
-                                RoundedRectangle:
-                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
-                                    size: (self.size)
-                                    pos: (self.pos)
-                            GridLayout:
-                                rows:1
-                                cols:2
-                                spacing: 10
-                                padding: 18
-                                MDBoxLayout:
-                                    md_bg_color: 0,0,0,0
-                                    size_hint: (2.8,1)
-                                    padding: 26
-                                    MDLabel:
-                                        markup: True
-                                        text: 'Nosso\n[b][size={}]Instagram[/b][/size]'.format(int(self.parent.width/2 * 0.25))
-                                        halign: 'center'
-                                        valign: 'middle'
-                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
-                                        font_size: int(self.parent.width/2 * 0.25)
-                                MDBoxLayout:
-                                    md_bg_color: 0,0,0,0
-                                    padding: [10,10]
-                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
-                                    Image:
-                                        source: 'icons/insta.png'
-                                        size: self.parent.size
-                                        allow_ratio: False
-                                        allow_stretch: True
-                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
-                    #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    # BOTOES INFERIORES COLUNA DO MEIO
-                    MDBoxLayout:
-                        md_bg_color: 0,0,0,0
-                        spacing: 20
-                        orientation: "horizontal"
-                        ButtonGrid:
-                            on_release: self.cor = root.cor_widget;
+                            on_release: self.cor = root.cor_widget; root.suporte()
                             on_enter: self.cor = root.cor_widget_hover;
                             on_leave: self.cor = root.cor_widget;
                             on_press: self.cor = root.cor_licenca;
@@ -5973,6 +5899,53 @@ WindowManager:
                                         allow_ratio: False
                                         allow_stretch: True
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
+                        ButtonGrid:
+                            on_release: self.cor = root.cor_widget; root.sugestao()
+                            on_enter: self.cor = root.cor_widget_hover;
+                            on_leave: self.cor = root.cor_widget;
+                            on_press: self.cor = root.cor_licenca;
+                            canvas:
+                                Color:
+                                    rgb: get_color_from_hex('#{}'.format(self.cor))
+                                RoundedRectangle:
+                                    radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
+                                    size: (self.size)
+                                    pos: (self.pos)
+                            GridLayout:
+                                rows:1
+                                cols:2
+                                spacing: 10
+                                padding: 18
+                                MDBoxLayout:
+                                    md_bg_color: 0,0,0,0
+                                    size_hint: (2.8,1)
+                                    padding: 26
+                                    MDLabel:
+                                        markup: True
+                                        text: 'Enviar\n[b][size={}]Sugestões[/b][/size]'.format(int(self.parent.width/2 * 0.25))
+                                        halign: 'center'
+                                        valign: 'middle'
+                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
+                                        font_size: int(self.parent.width/2 * 0.25)
+                                MDBoxLayout:
+                                    md_bg_color: 0,0,0,0
+                                    padding: [10,10]
+                                    size_hint: (int(0.01* self.parent.width/2), int(0.01* self.parent.width/2))
+                                    Image:
+                                        source: 'icons/sugestao.png'
+                                        size: self.parent.size
+                                        allow_ratio: False
+                                        allow_stretch: True
+                                        color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
+                    #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    # BOTOES INFERIORES COLUNA DO MEIO
+                    MDBoxLayout:
+                        md_bg_color: 0,0,0,0
+                        spacing: 20
+                        orientation: "horizontal"
+                        MDBoxLayout:
+                            md_bg_color: 0,0,0,0
+
                         MDBoxLayout:
                             md_bg_color: 0,0,0,0
 

@@ -1516,46 +1516,50 @@ class Inicio(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["logo.jpg"])
+	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
 	change_picture_ = None
+
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
-		path_example = r"C:\Users\João\OneDrive\Área de Trabalho\Pasta\Imagem.jpg"
+		path_example = r"Carlos Santos"
+
 	def change_picture(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.change_picture_:
 			self.change_picture_ = MDDialog(
-					title=f'[color={self.cor_aplicativo}]Alterar Imagem[/color]',
-					md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
-					type="custom",
-					auto_dismiss=True,
-					content_cls=self.Conteudo_AlterarImagem(),
-					buttons=[
-						MDFlatButton(
-							text=f"[color={self.cor_aplicativo}][b]CANCELAR[/color][/b]",
-							theme_text_color="Custom",
-							on_release=self.close_change_picture),
-						MDFlatButton(
-							text=f"[color={self.cor_aplicativo}][b]ALTERAR[/color][/b]",
-							theme_text_color="Custom",
-							on_release=root.alterar_foto)])
+				title=f'[color={self.cor_aplicativo}]Alterar Nome[/color]',
+				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
+				type="custom",
+				auto_dismiss=True,
+				content_cls=self.Conteudo_AlterarImagem(),
+				buttons=[
+					MDFlatButton(
+						text=f"[color={self.cor_aplicativo}][b]CANCELAR[/color][/b]",
+						theme_text_color="Custom",
+						on_release=self.close_change_picture),
+					MDFlatButton(
+						text=f"[color={self.cor_aplicativo}][b]ALTERAR[/color][/b]",
+						theme_text_color="Custom",
+						on_release=root.alterar_foto)])
 
 		self.change_picture_.open()
+
 	def close_change_picture(self, obj):
 		self.change_picture_.dismiss()
-	def alterar_foto(self,*args):
+
+	def alterar_foto(self, *args):
 		path = str(self.change_picture_.content_cls.ids.user_picture_path.text)
-		format_verifier = path[-3:]
-		if format_verifier == "jpg" or format_verifier == "png":
+		path = ' '.join(path.split())
+		if len(path) <= 15:
 			paths = pickle.load((open("path.p", "rb")))
 			paths.clear()
 			paths.append(path)
 			pickle.dump(paths, open("path.p", "wb"))
-			self.user_picture = r"{}".format(paths[0])
+			self.user_picture = "{}".format(paths[0])
 			self.change_picture_.dismiss()
 			self.change_picture_.content_cls.ids.user_picture_path.text = ""
-			toast("Imagem Alterada Com Sucesso.")
+			toast("Nome Alterado Com Sucesso.")
 		else:
-			toast("Atenção: Formato Invalido, valido somente .jpg e .png")
+			toast("Atenção: Limite Máximo de Caractere é 15.")
 
 
 
@@ -1984,16 +1988,17 @@ class Cronograma(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["logo.jpg"])
+	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
-		path_example = r"C:\Users\João\OneDrive\Área de Trabalho\Pasta\Imagem.jpg"
+		path_example = r"Carlos Santos"
+
 	def change_picture(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.change_picture_:
 			self.change_picture_ = MDDialog(
-				title=f'[color={self.cor_aplicativo}]Alterar Imagem[/color]',
+				title=f'[color={self.cor_aplicativo}]Alterar Nome[/color]',
 				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 				type="custom",
 				auto_dismiss=True,
@@ -2009,22 +2014,24 @@ class Cronograma(Screen):
 						on_release=root.alterar_foto)])
 
 		self.change_picture_.open()
+
 	def close_change_picture(self, obj):
 		self.change_picture_.dismiss()
+
 	def alterar_foto(self, *args):
 		path = str(self.change_picture_.content_cls.ids.user_picture_path.text)
-		format_verifier = path[-3:]
-		if format_verifier == "jpg" or format_verifier == "png":
+		path = ' '.join(path.split())
+		if len(path) <= 15:
 			paths = pickle.load((open("path.p", "rb")))
 			paths.clear()
 			paths.append(path)
 			pickle.dump(paths, open("path.p", "wb"))
-			self.user_picture = r"{}".format(paths[0])
+			self.user_picture = "{}".format(paths[0])
 			self.change_picture_.dismiss()
 			self.change_picture_.content_cls.ids.user_picture_path.text = ""
-			toast("Imagem Alterada Com Sucesso.")
+			toast("Nome Alterado Com Sucesso.")
 		else:
-			toast("Atenção: Formato Invalido, valido somente .jpg e .png")
+			toast("Atenção: Limite Máximo de Caractere é 15.")
 
 	Padrao = Tema(cor_aplicativo='686fa3', cor_aplicativo_tuple=[0.3098, 0.3411, 0.5333], cor_fundo_menu_deg1='464c7e',
 				  cor_fundo_menu_deg2='575e91', cor_fundo_trabalho='e6ebfb',
@@ -2431,7 +2438,9 @@ class Cronograma(Screen):
 			if spinner_name != "Matérias" and spinner_name != "Nome Simulado":
 				if self.ids.spinner_categoria.text == 'Teoria' or self.ids.spinner_categoria.text == 'Exercicios':
 					self.ids.spinner_topico.text = "Tópicos"
-					self.ids.spinner_topico.values = self.data[self.ids.spinner_materia.text][1]
+					self.sorted = self.data[self.ids.spinner_materia.text][1]
+					self.sorted.sort()
+					self.ids.spinner_topico.values = self.sorted
 
 			if self.ids.spinner_categoria.text == 'Simulado': pass
 		def update_categoria(self, *args):
@@ -2442,18 +2451,24 @@ class Cronograma(Screen):
 			if spinner_name == 'Teoria' or spinner_name == 'Exercicios' or spinner_name == "Categorias":
 				self.ids.spinner_materia.text = "Matérias"
 				self.ids.spinner_topico.text = "Tópicos"
-				self.ids.spinner_materia.values = tuple(self.data.keys())
-
+				self.topics = list(self.data.keys())
+				self.topics.sort()
+				self.ids.spinner_materia.values = self.topics
 
 			if spinner_name == 'Simulado':
-				self.ids.spinner_materia.values = self.simulados
+				self.simus = self.simulados
+				self.simus.sort()
+				self.ids.spinner_materia.values = self.simus
 				self.ids.spinner_topico.text = "Personalizado"
 				self.ids.spinner_materia.text = 'Nome Simulado'
 				self.ids.spinner_topico.values = []
+
 	class CategoriasSpinner(Spinner):
 		def __init__(self, **kwargs):
 			super().__init__(**kwargs)
-			self.values = ['Teoria', 'Exercicios', 'Simulado']
+			self.lista = ['Teoria', 'Exercicios', 'Simulado']
+			self.lista.sort()
+			self.values = self.lista
 			self.dropdown_cls = SpinnerDropdown
 			self.option_cls = SpinnerOptions
 			self.tema = pickle.load((open("tema.p", "rb")))
@@ -2461,7 +2476,6 @@ class Cronograma(Screen):
 			self.color = self.tema[0].cor_aplicativo_tuple
 			self.bold = True
 			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
-			#self.text = "Categorias"
 	class AllMateriasSpinner(Spinner):
 		def __init__(self, **kwargs):
 			super().__init__(**kwargs)
@@ -4128,13 +4142,16 @@ class Simulados(Screen):
 			super().__init__(**kwargs)
 			self.tema = pickle.load((open("tema.p", "rb")))
 			self.simulados = pickle.load((open("simulados.p", "rb")))
+			self.simulados.sort()
+			self.values = self.simulados
 			self.dropdown_cls = SpinnerDropdown
 			self.option_cls = SpinnerOptions
 			self.color = self.tema[0].cor_aplicativo_tuple
 			self.bold = True
 			self.dropdown_cls.max_height = self.height * 2 + 2 * 2
 			self.text = "Simulados"
-			self.values = self.simulados
+
+
 
 	# SIMULADO DE DESTAQUE
 	simulado_destaque_nome = StringProperty('Sem Simulado')
@@ -4159,17 +4176,17 @@ class Simulados(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["logo.jpg"])
+	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
-		path_example = r"C:\Users\João\OneDrive\Área de Trabalho\Pasta\Imagem.jpg"
+		path_example = r"Carlos Santos"
 
 	def change_picture(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.change_picture_:
 			self.change_picture_ = MDDialog(
-				title=f'[color={self.cor_aplicativo}]Alterar Imagem[/color]',
+				title=f'[color={self.cor_aplicativo}]Alterar Nome[/color]',
 				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 				type="custom",
 				auto_dismiss=True,
@@ -4191,18 +4208,18 @@ class Simulados(Screen):
 
 	def alterar_foto(self, *args):
 		path = str(self.change_picture_.content_cls.ids.user_picture_path.text)
-		format_verifier = path[-3:]
-		if format_verifier == "jpg" or format_verifier == "png":
+		path = ' '.join(path.split())
+		if len(path) <= 15:
 			paths = pickle.load((open("path.p", "rb")))
 			paths.clear()
 			paths.append(path)
 			pickle.dump(paths, open("path.p", "wb"))
-			self.user_picture = r"{}".format(paths[0])
+			self.user_picture = "{}".format(paths[0])
 			self.change_picture_.dismiss()
 			self.change_picture_.content_cls.ids.user_picture_path.text = ""
-			toast("Imagem Alterada Com Sucesso.")
+			toast("Nome Alterado Com Sucesso.")
 		else:
-			toast("Atenção: Formato Invalido, valido somente .jpg e .png")
+			toast("Atenção: Limite Máximo de Caractere é 15.")
 
 	simulados = read_or_new_pickle(path="simulados.p", default=[])
 
@@ -4244,6 +4261,8 @@ class Simulados(Screen):
 			new_data_refreshed = pickle.load((open("simulados.p", "rb")))
 			new_data_refreshed.sort()
 			self.remover_simulado_dialog.content_cls.ids.spinnerSimulados.values = new_data_refreshed
+
+			self.ids.spinnerSimulados2.values = new_data_refreshed
 
 			toast('Simulado {} Removido Com Sucesso!'.format(simulado_name))
 			self.simulado_destaque_nome = str(simulado_destaque_finder())
@@ -4308,7 +4327,7 @@ class Simulados(Screen):
 			simulados.append(new_simulado_name)
 			pickle.dump(simulados, open("simulados.p", "wb"))
 			new_data_refreshed = pickle.load((open("simulados.p", "rb")))
-
+			new_data_refreshed.sort()
 			self.ids.spinnerSimulados2.values = new_data_refreshed
 
 			self.criar_novo_simulado_dialog.content_cls.ids.simulado_name.text = ''
@@ -4350,6 +4369,7 @@ class Simulados(Screen):
 		self.user_picture = r"{}".format(paths[0])
 
 		simulados = pickle.load((open("simulados.p", "rb")))
+		simulados.sort()
 		self.ids.spinnerSimulados2.text = 'Simulados'
 		self.ids.spinnerSimulados2.values = simulados
 		self.simulado_destaque_nome = str(simulado_destaque_finder())
@@ -4425,16 +4445,16 @@ class Estatisticas(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["logo.jpg"])
+	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
-		path_example = r"C:\Users\João\OneDrive\Área de Trabalho\Pasta\Imagem.jpg"
+		path_example = r"Carlos Santos"
 	def change_picture(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.change_picture_:
 			self.change_picture_ = MDDialog(
-				title=f'[color={self.cor_aplicativo}]Alterar Imagem[/color]',
+				title=f'[color={self.cor_aplicativo}]Alterar Nome[/color]',
 				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 				type="custom",
 				auto_dismiss=True,
@@ -4454,18 +4474,20 @@ class Estatisticas(Screen):
 		self.change_picture_.dismiss()
 	def alterar_foto(self, *args):
 		path = str(self.change_picture_.content_cls.ids.user_picture_path.text)
-		format_verifier = path[-3:]
-		if format_verifier == "jpg" or format_verifier == "png":
+		path = ' '.join(path.split())
+		if len(path) <= 15:
 			paths = pickle.load((open("path.p", "rb")))
 			paths.clear()
 			paths.append(path)
 			pickle.dump(paths, open("path.p", "wb"))
-			self.user_picture = r"{}".format(paths[0])
+			self.user_picture = "{}".format(paths[0])
 			self.change_picture_.dismiss()
 			self.change_picture_.content_cls.ids.user_picture_path.text = ""
-			toast("Imagem Alterada Com Sucesso.")
+			toast("Nome Alterado Com Sucesso.")
 		else:
-			toast("Atenção: Formato Invalido, valido somente .jpg e .png")
+			toast("Atenção: Limite Máximo de Caractere é 15.")
+
+
 
 	def atualizar_topicos_info(self, root, *args):
 		self.taxa_acertos_topicos = FUNCTION_TaxaAcertos_Topicos(str(root.ids.spinnerAllMaterias.text), str(root.ids.spinnerTopicos.text))
@@ -4478,14 +4500,12 @@ class Estatisticas(Screen):
 		self.acertos_topicos_ThisWeek = FUNCTION_Acertos_Topicos_Weekly(str(root.ids.spinnerAllMaterias.text), str(root.ids.spinnerTopicos.text))
 		self.erros_topicos = FUNCTION_Erros_Topicos(str(root.ids.spinnerAllMaterias.text), str(root.ids.spinnerTopicos.text))
 		self.erros_topicos_ThisWeek = FUNCTION_Erros_Topicos_Weekly(str(root.ids.spinnerAllMaterias.text), str(root.ids.spinnerTopicos.text))
-
 	def refreshTopicosSpinner(self, root, *args):
 		self.data = pickle.load((open("data_subjects_topics.p", "rb")))
 		if root.ids.spinnerAllMaterias.text != "Matérias":
 			root.ids.spinnerTopicos.values = ()
 			root.ids.spinnerTopicos.values = self.data[root.ids.spinnerAllMaterias.text][1]
 			root.ids.spinnerTopicos.text = "Tópicos"
-
 	class AllMateriasSpinner(Spinner):
 		def __init__(self, **kwargs):
 			super().__init__(**kwargs)
@@ -4495,7 +4515,6 @@ class Estatisticas(Screen):
 			self.bold = True
 			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
 			self.text = "Matérias"
-
 	class TopicosSpinner(Spinner):
 		def __init__(self, **kwargs):
 			super().__init__(**kwargs)
@@ -4504,7 +4523,6 @@ class Estatisticas(Screen):
 			self.bold = True
 			self.dropdown_cls.max_height = self.height * 2 + 2 * 4
 			self.text = "Tópicos"
-
 	def on_enter(self, *args):
 		paths = pickle.load((open("path.p", "rb")))
 		self.user_picture = r"{}".format(paths[0])
@@ -4536,17 +4554,17 @@ class Configuracoes(Screen):
 	cor_aplicativo = StringProperty(tema[0].cor_aplicativo)
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["logo.jpg"])
+	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
-		path_example = r"C:\Users\João\OneDrive\Área de Trabalho\Pasta\Imagem.jpg"
+		path_example = r"Carlos Santos"
 
 	def change_picture(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.change_picture_:
 			self.change_picture_ = MDDialog(
-				title=f'[color={self.cor_aplicativo}]Alterar Imagem[/color]',
+				title=f'[color={self.cor_aplicativo}]Alterar Nome[/color]',
 				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 				type="custom",
 				auto_dismiss=True,
@@ -4566,18 +4584,18 @@ class Configuracoes(Screen):
 		self.change_picture_.dismiss()
 	def alterar_foto(self, *args):
 		path = str(self.change_picture_.content_cls.ids.user_picture_path.text)
-		format_verifier = path[-3:]
-		if format_verifier == "jpg" or format_verifier == "png":
+		path = ' '.join(path.split())
+		if len(path) <= 15:
 			paths = pickle.load((open("path.p", "rb")))
 			paths.clear()
 			paths.append(path)
 			pickle.dump(paths, open("path.p", "wb"))
-			self.user_picture = r"{}".format(paths[0])
+			self.user_picture = "{}".format(paths[0])
 			self.change_picture_.dismiss()
 			self.change_picture_.content_cls.ids.user_picture_path.text = ""
-			toast("Imagem Alterada Com Sucesso.")
+			toast("Nome Alterado Com Sucesso.")
 		else:
-			toast("Atenção: Formato Invalido, valido somente .jpg e .png")
+			toast("Atenção: Limite Máximo de Caractere é 15.")
 
 	# SESSAO DE DUVIDAS
 	show_help_  = None
@@ -4693,7 +4711,12 @@ class Configuracoes(Screen):
 			self.bold = True
 			self.dropdown_cls.max_height = self.height * 2 + 2 * 2
 			#self.text = "Padrão"
-			self.values = ["Padrão", "Vintage", "Blue", "StudyGram", "Pink", "Desbloquear", "One_Year"]
+			self.themes = ["Padrão"]
+			self.ord = ["Vintage", "Ocean", "Florest", "Sakura", "Light Pink", "Night"]
+			self.ord.sort()
+			for x in range(len(self.ord)):
+				self.themes.append(self.ord[x])
+			self.values = self.themes
 	def alterar_tema(self, root, *args):
 		self.tema = pickle.load((open("tema.p", "rb")))
 		if not self.alterar_tema_dialog:
@@ -4718,13 +4741,13 @@ class Configuracoes(Screen):
 		self.alterar_tema_dialog.content_cls.ids.spinnerTemas.text = self.tema[1]
 		self.alterar_tema_dialog.open()
 	def alterar_tema_Function(self, root, *args):
-		todos_temas = {"Padrão":self.Padrao, "Vintage":self.Vintage, "Blue":self.Blue, "StudyGram":self.StudyGram, "Pink":self.Pink, "Desbloquear":self.Desbloquear, "One_Year":self.One_Year}
+		todos_temas = {"Padrão":self.Padrao, "Vintage":self.Vintage, "Ocean":self.Blue, "Florest":self.StudyGram, "Sakura":self.Pink, "Light Pink":self.Desbloquear, "Night":self.One_Year}
 		tema = pickle.load((open("tema.p", "rb")))
 		tema.clear()
 		novo_tema_escolhido = str(self.alterar_tema_dialog.content_cls.ids.spinnerTemas.text)
 		tema.append(todos_temas[novo_tema_escolhido])
 		tema.append(novo_tema_escolhido)
-		toast(f"Tema Atualizado Com Sucesso, para visualizar seu novo tema reinicie o aplicativo.")
+		toast(f"Tema atualizado com sucesso, para visualizar seu novo tema reinicie o aplicativo.")
 		pickle.dump(tema, open("tema.p", "wb"))
 	def close_alterar_tema_dialog(self, obj):
 		self.alterar_tema_dialog.dismiss()
@@ -4733,8 +4756,19 @@ class Configuracoes(Screen):
 	def renovar_plano(self):
 		webbrowser.open("http://google.com", new=1)
 
+	def insta(self):
+		webbrowser.open("http://instagram.com/invisioncode", new=1)
+
+	def youtube(self):
+		webbrowser.open("https://www.youtube.com/channel/UCW7HrgdojZp-5ianxLxI4JQ", new=1)
+
+	def sugestao(self):
+		webbrowser.open("https://docs.google.com/forms/u/2/d/e/1FAIpQLScwg554jgtWvWnqt6-JuhDK07-xXDI53RgNYw1VIt5HZVQkdw/viewform", new=1)
+
 	def suporte(self):
-		webbrowser.open("http://youtube.com", new=1)
+		webbrowser.open("https://docs.google.com/forms/d/e/1FAIpQLSeiDTuqEowykk0fXt8kcwSRzuwWSD2rxCCtrCNIgJn4qFsN5Q/viewform", new=1)
+
+
 
 	def on_enter(self, *args):
 		paths = pickle.load((open("path.p", "rb")))
@@ -4878,6 +4912,8 @@ class grid(MDApp):
 		self.cor_principal_perfil = self.menu_selected_color
 
 	def build(self):
+		self.title = 'Invision Study'
+		self.icon = 'icons\icon.png'
 		return Builder.load_file('grid.kv')
 
 
