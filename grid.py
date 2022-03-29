@@ -4800,11 +4800,7 @@ class grid(MDApp):
 	tema = read_or_new_pickle(path="tema.p", default=[Padrao, "Padrão"])
 	tema = pickle.load((open("tema.p", "rb")))
 
-	def restart(self):
-		self.root.clear_widgets()
-		self.stop()
 
-	#-----------------------------------------------------------------------#
 	cor_principal_icone_fundo = StringProperty(tema[0].cor_letra_menu)
 	cor_principal_icone_fundo_def = StringProperty(tema[0].cor_letra_menu)
 	cor_principal_icone_fundo_hover = StringProperty(tema[0].cor_widget_hover)
@@ -4914,7 +4910,7 @@ class grid(MDApp):
 	def build(self):
 		self.title = 'Invision Study'
 		self.icon = 'icons\icon.png'
-		return Builder.load_file('grid.kv')
+		return Builder.load_file('InvisionStudy.kv')
 
 
 

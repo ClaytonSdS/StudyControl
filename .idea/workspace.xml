@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bc92bdb6-106a-45c6-8488-740779e5046d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TABELA PARA CÁLCULO DE MOMENTOS DE INÉRCIA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_subjects_topics.p" beforeDir="false" afterPath="$PROJECT_DIR$/data_subjects_topics.p" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grid.kv" beforeDir="false" afterPath="$PROJECT_DIR$/grid.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grid.kv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/grid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/path.p" beforeDir="false" afterPath="$PROJECT_DIR$/path.p" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulados.p" beforeDir="false" afterPath="$PROJECT_DIR$/simulados.p" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tema.p" beforeDir="false" afterPath="$PROJECT_DIR$/tema.p" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +28,28 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.InvisionStudy">
+    <configuration name="InvisionStudy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Invision-Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../Invision Study" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../../Invision Study/InvisionStudy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="grid" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Invision-Study" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.InvisionStudy" />
         <item itemvalue="Python.grid" />
       </list>
     </recent_temporary>
