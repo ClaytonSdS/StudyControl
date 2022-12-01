@@ -4,7 +4,7 @@
  Software developed by InvisionCode to help students organize their studies and get better results.
  #
 # Philosophy
-Our software is made by students for students, our goal is to constantly change Invision Study software based on your feeedback. So, your opinion is really important to us, you are part of this project, feel free to give your ideas.
+This project was made to improve python skills and the main objective was to develop a software like to control study and its respective subjects.
 
 # How to Use
 * First of all, you need to create your own subjects like math, physics, etc.
