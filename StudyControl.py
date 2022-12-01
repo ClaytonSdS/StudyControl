@@ -4891,13 +4891,13 @@ class InvisionStudy(MDApp):
 		self.cor_principal_perfil = self.menu_selected_color
 
 	def build(self):
-		self.title = 'Invision Study'
+		self.title = 'StudyControl'
 		self.icon = 'icons\icon.png'
-		return Builder.load_file('InvisionStudy.kv')
+		return Builder.load_file('StudyControl.kv')
 
 
 
 if __name__ == '__main__':
-	InvisionStudy().run()
+	StudyControl().run()
 
 
