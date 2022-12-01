@@ -13,8 +13,7 @@ This project was made to improve python skills and the main objective was to dev
 # Functions
 * Statistics for each subjects and topics.
 * Statistics for each simulated.
-* Timer function.
 
-# Get Full Version
-You can get this full version of the software by buying from one of the links below.
+# Credits
+Clayton Silva dos Santos
 
