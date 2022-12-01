@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc92bdb6-106a-45c6-8488-740779e5046d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Invision-Study.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudyControl.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudyControl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data_subjects_topics.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data_timeline.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../datasave.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../datatables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icon.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/acertos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/add_data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/calendar_hour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/calendar_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/certo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/change_status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronograma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronograma_title1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronograma_title2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronograma_title3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronograma_title4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronometro_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/cronometro_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/delete_simulado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/deslogar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/double_dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/edit_ex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/estudado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/estudado.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/estudado_symbol_only.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/exercicios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/grades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/help2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/icon-fonts.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/insta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/logo_invision_study.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/modelo_botoes_cronograma_exercicios.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/modelo_botoes_cronograma_exercicios.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/new_simulado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/plus_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/questoes_realizadas_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/questoes_realizadas_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/remove_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/remove_1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/remove_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/remove_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/remove_data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/renova_plano.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/resolution.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/search2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/simu_realizados.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/simulados.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/stats_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/studied_not.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/studied_symbol_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/studied_symbol_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/studied_yes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/sugestao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/taxa_acertos_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/taxa_acertos_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/tema.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/teste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/teste.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/teste_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/timer_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/topic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/wrench.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/wrench_resized.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/xx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icons/youtube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/_version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/color_definitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/fadingedge/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/fadingedge/fadingedge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/roulettescroll/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/roulettescroll/roulettescroll.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/stiffscroll/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/effects/stiffscroll/stiffscroll.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/factory_registers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/font_definitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/Roboto-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/fonts/materialdesignicons-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/icon_definitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/alpha_layer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/firebase-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/quad_shadow-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/quad_shadow-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/quad_shadow-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/quad_shadow.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_shadow-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_shadow-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_shadow.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_st_shadow-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_st_shadow-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_st_shadow-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/rec_st_shadow.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/round_shadow-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/round_shadow-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/round_shadow-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/round_shadow.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/transparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/images/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/material_resources.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/theming.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/theming_dynamic_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/toast/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/toast/androidtoast/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/toast/androidtoast/androidtoast.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/toast/kivytoast/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/toast/kivytoast/kivytoast.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/argument_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/hotreload/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/hotreload/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/packaging/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/packaging/pyinstaller/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/packaging/pyinstaller/hook-kivymd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/Controller/first_screen.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/Model/base.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/Model/base_model.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/Model/first_screen.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/Utility/observer.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/View/FirstScreen/first_screen.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/View/FirstScreen/first_screen.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/View/base_screen.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/View/screens.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/MVC/main.py_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/tools/patterns/create_project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/anchorlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/backdrop/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/backdrop/backdrop.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/backdrop/backdrop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/banner/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/banner/banner.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/banner/banner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/backgroundcolor_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/elevation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/focus_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/hover_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/magic_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/ripple_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/toggle_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/behaviors/touch_behavior.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomnavigation/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomnavigation/bottomnavigation.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomnavigation/bottomnavigation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomsheet/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomsheet/bottomsheet.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/bottomsheet/bottomsheet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/boxlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/button/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/button/button.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/button/button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/card/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/card/card.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/card/card.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/carousel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/chip/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/chip/chip.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/chip/chip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/circularlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/datatables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/datatables/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/datatables/datatables.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/datatables/datatables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dialog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dialog/dialog.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dialog/dialog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dropdownitem/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dropdownitem/dropdownitem.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/dropdownitem/dropdownitem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/expansionpanel/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/expansionpanel/expansionpanel.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/expansionpanel/expansionpanel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/filemanager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/filemanager/filemanager.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/filemanager/filemanager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/fitimage/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/fitimage/fitimage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/floatlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/gridlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/imagelist/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/imagelist/imagelist.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/imagelist/imagelist.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/label/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/label/label.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/label/label.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/list/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/list/list.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/list/list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/menu/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/menu/menu.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/menu/menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationdrawer/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationdrawer/navigationdrawer.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationdrawer/navigationdrawer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationrail/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationrail/navigationrail.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/navigationrail/navigationrail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/picker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/colorpicker/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/colorpicker/colorpicker.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/colorpicker/colorpicker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/datepicker/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/datepicker/datepicker.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/datepicker/datepicker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/timepicker/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/timepicker/timepicker.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/pickers/timepicker/timepicker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/progressbar/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/progressbar/progressbar.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/progressbar/progressbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/refreshlayout/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/refreshlayout/refreshlayout.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/refreshlayout/refreshlayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/relativelayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/screen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selection/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selection/selection.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selection/selection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selectioncontrol/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selectioncontrol/selectioncontrol.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/selectioncontrol/selectioncontrol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/slider/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/slider/slider.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/slider/slider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/snackbar/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/snackbar/snackbar.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/snackbar/snackbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/spinner/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/spinner/spinner.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/spinner/spinner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/stacklayout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/swiper/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/swiper/swiper.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/swiper/swiper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tab/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tab/tab.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tab/tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/taptargetview.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/rotatewidget/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/rotatewidget/rotatewidget.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/rotatewidget/rotatewidget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/scalewidget/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/scalewidget/scalewidget.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/scalewidget/scalewidget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/stencilwidget/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/stencilwidget/stencilwidget.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/templates/stencilwidget/stencilwidget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/textfield/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/textfield/textfield.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/textfield/textfield.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/toolbar/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/toolbar/toolbar.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/toolbar/toolbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tooltip/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tooltip/tooltip.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/tooltip/tooltip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/transition/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/transition/transition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/uix.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/uix/widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/utils/asynckivy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/utils/fitimage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/utils/fpsmonitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kivymd/utils/set_bars_colors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../list.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logo_invision_study.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logo_invision_study_branco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../path.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../picker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simulados.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tema.p" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26QoWtFWSlvsy5n9fXLXygDULee" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python.StudyControl">
+    <configuration name="Invision Study" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Invision-Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Invision-Study/Invision Study.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="InvisionStudy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Invision-Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\clayt\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../../Invision Study" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../../Invision Study/InvisionStudy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StudyControl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Invision-Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StudyControl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Invision Study" />
+      <item itemvalue="Python.InvisionStudy" />
+      <item itemvalue="Python.StudyControl" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.StudyControl" />
+        <item itemvalue="Python.Invision Study" />
+        <item itemvalue="Python.InvisionStudy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc92bdb6-106a-45c6-8488-740779e5046d" name="Changes" comment="" />
+      <created>1647365207457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647365207457</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/StudyControl.py</url>
+          <line>1234</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
