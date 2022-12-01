@@ -1,8 +1,7 @@
+![Logo Invision Study](https://user-images.githubusercontent.com/95229093/205111573-e5a97008-e1ec-4728-9c89-01574ce3fa07.png)
 
-![logo_invision_study](https://user-images.githubusercontent.com/95229093/158428286-8bb3475b-22f0-4d9b-bd3d-ca049060c7d6.png)
 
-This project was made to improve python skills and the main objective was to develop a software like to control study and its respective subjects.
- #
+This project was made to improve Python skills and the main objective was to develop a software like to control study and its respective subjects, grades, etc.
 
 
 # How to Use
@@ -19,5 +18,7 @@ This project was made to improve python skills and the main objective was to dev
    - Download link https://drive.google.com/file/d/1lVNmOV4MEVn-CGbM_1GvxptkrCY5RF7Z/view?usp=share_link
    - Extract StudyControl.rar and run StudyControl.exe file
 # Credits
-Clayton Silva dos Santos
+#Credits: Clayton Silva dos Santos
+#GitHub: @ClaytonSdS
+#LinkedIn: @clayton-santos-579682205
 
