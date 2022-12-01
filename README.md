@@ -11,12 +11,14 @@ This project was made to improve Python skills and the main objective was to dev
 # How to Install
 **1. Clone this repository Github**
    - $ git clone https://github.com/ClaytonSdS/StudyControl.git
-   - Open Run folder
+   - Open Run\dist\StudyControl folder
    - Run StudyControl.exe file
   
 **2. Direct Download**
    - Download link https://drive.google.com/file/d/1lVNmOV4MEVn-CGbM_1GvxptkrCY5RF7Z/view?usp=share_link
-   - Extract StudyControl.rar and run StudyControl.exe file
+   - Extract StudyControl.rar
+   - Open Run\dist\StudyControl folder
+   - Run StudyControl.exe file
 # Follow for more
 - [LinkedIn](https://www.linkedin.com/in/clayton-santos-579682205/)
 - [GitHub](https://github.com/ClaytonSdS)
