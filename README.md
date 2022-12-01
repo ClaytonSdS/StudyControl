@@ -18,7 +18,6 @@ This project was made to improve Python skills and the main objective was to dev
    - Download link https://drive.google.com/file/d/1lVNmOV4MEVn-CGbM_1GvxptkrCY5RF7Z/view?usp=share_link
    - Extract StudyControl.rar and run StudyControl.exe file
 # Credits
-#Credits: Clayton Silva dos Santos
-#GitHub: @ClaytonSdS
-#LinkedIn: @clayton-santos-579682205
+- [LinkedIn](https://www.linkedin.com/in/clayton-santos-579682205/)
+
 
