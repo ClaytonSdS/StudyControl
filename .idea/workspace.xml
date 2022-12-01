@@ -3,8 +3,44 @@
   <component name="ChangeListManager">
     <list default="true" id="bc92bdb6-106a-45c6-8488-740779e5046d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Invision Study.py" beforeDir="false" afterPath="$PROJECT_DIR$/StudyControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvisionStudy.kv" beforeDir="false" afterPath="$PROJECT_DIR$/StudyControl.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyControl.kv" beforeDir="false" afterPath="$PROJECT_DIR$/StudyControl.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/StudyControl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/2022_05_03/data_subjects_topics.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/2022_05_03/data_timeline.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/2022_05_03/simulados.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/2022_05_03/tema.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/22_02_2022/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/22_02_2022/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/BACKUP_11_02/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/BACKUP_11_02/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_02_02/Novo(a) Documento de Texto.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_02_02/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_02_02/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_04_02/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_04_02/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_07_02/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_07_02/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_10_02/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_10_02/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_17_02_mal_otimizado_0/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_17_02_mal_otimizado_0/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_17_02_mal_otimizado_1/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_17_02_mal_otimizado_1/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_26_01/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_26_01/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_26_01_TENTATIVE DE RECYCLE/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_26_01_TENTATIVE DE RECYCLE/list.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_old_version_06_02_2022/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_old_version_06_02_2022/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_raw/data_subjects_topics.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/backup_raw/data_timeline.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/mais_moderno/grid.kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backups/mais_moderno/grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/icons/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/teste.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/path.p" beforeDir="false" afterPath="$PROJECT_DIR$/path.p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spin_on determinate funcionando.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tema.p" beforeDir="false" afterPath="$PROJECT_DIR$/tema.p" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

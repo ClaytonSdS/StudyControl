@@ -1500,6 +1500,9 @@ class SpinnerDropdown_Blue(DropDown):
 
 
 class Inicio(Screen):
+	def github(self):
+		webbrowser.open("https://github.com/ClaytonSdS", new=1)
+
 	def read_or_new_pickle(path, default):
 		if os.path.isfile(path):
 			with open(path, "rb") as f:
@@ -1513,7 +1516,7 @@ class Inicio(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
+	path_user = read_or_new_pickle(path="path.p", default=["Usuário"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
@@ -1565,6 +1568,12 @@ class Inicio(Screen):
 	tema = pickle.load((open("tema.p", "rb")))
 	cor_aplicativo = StringProperty(tema[0].cor_aplicativo)
 
+	cor_licenca = StringProperty(tema[0].cor_licenca)
+	cor_licenca_texto = StringProperty(tema[0].cor_licenca_texto)
+	cor_widget_hover = StringProperty(tema[0].cor_widget_hover)
+	cor_widget = StringProperty(tema[0].cor_widget)
+
+
 	# MOSTRAR INFORMAÇÕES DE CADASTRO
 	show_info_ = None
 	class Conteudo_ShowInfo(MDFloatLayout, HoverBehavior):
@@ -1575,7 +1584,7 @@ class Inicio(Screen):
 		if not self.show_info_:
 			self.show_info_ = MDDialog(
 				title=f'[color={self.cor_aplicativo}][b]Informações de Cadastro[/b][/color]',
-				text = f"[color={self.cor_aplicativo}]\n[b]Nome do Usuário:[/b] Clayton Silva dos Santos\n\n[b]Email:[/b] clayton_box@outlook.com\n\n[b]Tema:[/b] Padrão\n\n[b]Plano de Utilização:[/b] Plano Anual Standard\n\n[b]Data de Expiração:[/b] 03/03/2022\n\n[b]Status:[/b] Ativo\n\n[/color]",
+				text = f"[color={self.cor_aplicativo}]\n[b]Nome do Usuário:[/b] Clayton\n\n[b]GitHub:[/b] @ClaytonSdS\n\n[b]Tema:[/b] Padrão\n\n[b]Plano de Utilização:[/b] Plano Anual Standard\n\n[b]Data de Expiração:[/b] 03/03/2222\n\n[b]Status:[/b] Ativo\n\n[/color]",
 				md_bg_color=self.tema[0].cor_fundo_trabalho_tuple,
 				type="custom",
 				size_hint=[0.4, 0.4],
@@ -1985,7 +1994,7 @@ class Cronograma(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
+	path_user = read_or_new_pickle(path="path.p", default=["Usuário"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
@@ -4165,7 +4174,7 @@ class Simulados(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
+	path_user = read_or_new_pickle(path="path.p", default=["Usuário"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
@@ -4434,7 +4443,7 @@ class Estatisticas(Screen):
 
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
+	path_user = read_or_new_pickle(path="path.p", default=["Usuário"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
@@ -4543,7 +4552,7 @@ class Configuracoes(Screen):
 	cor_aplicativo = StringProperty(tema[0].cor_aplicativo)
 	# ALTERAR FOTO
 	user_picture = StringProperty('')
-	path_user = read_or_new_pickle(path="path.p", default=["Invision Code"])
+	path_user = read_or_new_pickle(path="path.p", default=["Usuário"])
 	change_picture_ = None
 
 	class Conteudo_AlterarImagem(MDFloatLayout, HoverBehavior):
@@ -4748,14 +4757,10 @@ class Configuracoes(Screen):
 	def insta(self):
 		webbrowser.open("http://instagram.com/invisioncode", new=1)
 
+
+
 	def youtube(self):
 		webbrowser.open("https://www.youtube.com/channel/UCW7HrgdojZp-5ianxLxI4JQ", new=1)
-
-	def sugestao(self):
-		webbrowser.open("https://docs.google.com/forms/u/2/d/e/1FAIpQLScwg554jgtWvWnqt6-JuhDK07-xXDI53RgNYw1VIt5HZVQkdw/viewform", new=1)
-
-	def suporte(self):
-		webbrowser.open("https://docs.google.com/forms/d/e/1FAIpQLSeiDTuqEowykk0fXt8kcwSRzuwWSD2rxCCtrCNIgJn4qFsN5Q/viewform", new=1)
 
 
 
@@ -4898,6 +4903,6 @@ class InvisionStudy(MDApp):
 
 
 if __name__ == '__main__':
-	StudyControl().run()
+	InvisionStudy().run()
 
 

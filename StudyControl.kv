@@ -1948,7 +1948,7 @@ WindowManager:
                 spacing: 20
                 MDLabel:
                     markup: True
-                    text: '[b]Invision Study[/b]'
+                    text: '[b]StudyControl[/b]'
                     halign: 'center'
                     valign: 'middle'
                     color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -2201,39 +2201,10 @@ WindowManager:
                             font_size: int(self.parent.width/2 * 0.259)
 
                 ############################################################################################################################
-                # BOTAO DESLOGAR
+                # SPACE
                 ButtonGrid_Menu_v2:
                     pos_hint: 0.5, 0.5
-                    on_press: app.cor_principal_deslogar = app.cor_barra_inferior_licenca;
-                    on_enter: app.cor_principal_deslogar = app.cor_widgets_hover;
-                    on_leave: app.cor_principal_deslogar = app.menu_unselected_color;
-
                     md_bg_color: 0,0,0,0
-                    spacing: 10
-
-                    # ICONE
-                    MDBoxLayout:
-                        md_bg_color: 1,0,0,0
-                        Image:
-                            source: 'icons/deslogar.png'
-                            size_hint: 1,1
-                            pos_hint: {'center_x': .5,'center_y': .5}
-                            allow_stretch: False
-                            allow_ratio: False
-                            center_x: self.parent.center_x
-                            center_y: self.parent.center_y
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                    # TEXTO
-                    MDBoxLayout:
-                        size_hint: (4,1)
-                        md_bg_color: 0,0,1,0
-                        MDLabel:
-                            markup: True
-                            text: '[b]Deslogar[/b]'
-                            halign: 'left'
-                            valign: 'middle'
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                            font_size: int(self.parent.width/2 * 0.259)
 
         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         # AREA LIVRE + BARRA DE MENU
@@ -2364,7 +2335,7 @@ WindowManager:
                                         radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
                                 MDLabel:
                                     markup: True
-                                    text: 'Plano Atual\n[b][size={}]Invision Study Standard[/b][/size]'.format(int(0.15* self.parent.width/2))
+                                    text: 'Plano Atual\n[b][size={}]Standard[/b][/size]'.format(int(0.15* self.parent.width/2))
                                     halign: 'center'
                                     valign:'middle'
                                     color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
@@ -2383,13 +2354,16 @@ WindowManager:
                                         pos: self.pos
                                         size: self.size
                                         radius: [(9.2, 9.2), (9.2, 9.2), (9.2, 9.2), (9.2, 9.2)]
-                                MDLabel:
-                                    markup: True
-                                    text: 'Sua Assinatura Expira Em 02/03/2100'
-                                    halign: 'center'
-                                    valign:'middle'
-                                    color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
-                                    font_size: int(0.075* self.parent.width/2)
+                                ButtonGrid:
+                                    on_release: self.cor = root.cor_widget; root.github()
+                                    on_press: self.cor = root.cor_licenca;
+                                    MDLabel:
+                                        markup: True
+                                        text: '@github.com/ClaytonSdS'
+                                        halign: 'center'
+                                        valign:'middle'
+                                        color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                                        font_size: int(0.075* self.parent.width/2)
 
 
                     #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2808,7 +2782,7 @@ WindowManager:
                     height: 30
 
                     MDLabel:
-                        text: 'Produto Licenciado 2022 © Todos os Direitos Reservados      '
+                        text: '@github.com/ClaytonSdS      '
                         halign: "right"
                         bold: False
                         font_size: app.font_size_normal_2 - 3
@@ -2862,7 +2836,7 @@ WindowManager:
                 spacing: 20
                 MDLabel:
                     markup: True
-                    text: '[b]Invision Study[/b]'
+                    text: '[b]StudyControl[/b]'
                     halign: 'center'
                     valign: 'middle'
                     color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -3112,37 +3086,11 @@ WindowManager:
                             font_size: int(self.parent.width/2 * 0.259)
 
                 ############################################################################################################################
-                # BOTAO DESLOGAR
+                # SPACE
                 ButtonGrid_Menu_v2:
                     pos_hint: 0.5, 0.5
-                    on_press: app.cor_principal_deslogar = app.cor_barra_inferior_licenca;
-                    on_enter: app.cor_principal_deslogar = app.cor_widgets_hover;
-                    on_leave: app.cor_principal_deslogar = app.menu_unselected_color;
                     md_bg_color: 0,0,0,0
-                    spacing: 10
-                    # ICONE
-                    MDBoxLayout:
-                        md_bg_color: 1,0,0,0
-                        Image:
-                            source: 'icons/deslogar.png'
-                            size_hint: 1,1
-                            pos_hint: {'center_x': .5,'center_y': .5}
-                            allow_stretch: False
-                            allow_ratio: False
-                            center_x: self.parent.center_x
-                            center_y: self.parent.center_y
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                    # TEXTO
-                    MDBoxLayout:
-                        size_hint: (4,1)
-                        md_bg_color: 0,0,1,0
-                        MDLabel:
-                            markup: True
-                            text: '[b]Deslogar[/b]'
-                            halign: 'left'
-                            valign: 'middle'
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                            font_size: int(self.parent.width/2 * 0.259)
+
 
 
         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3670,7 +3618,7 @@ WindowManager:
                     height: 30
 
                     MDLabel:
-                        text: 'Produto Licenciado 2022 © Todos os Direitos Reservados      '
+                        text: '@github.com/ClaytonSdS      '
                         halign: "right"
                         bold: False
                         font_size: app.font_size_normal_2 - 3
@@ -3731,7 +3679,7 @@ WindowManager:
                 spacing: 20
                 MDLabel:
                     markup: True
-                    text: '[b]Invision Study[/b]'
+                    text: '[b]StudyControl[/b]'
                     halign: 'center'
                     valign: 'middle'
                     color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -3982,39 +3930,10 @@ WindowManager:
                             font_size: int(self.parent.width/2 * 0.259)
 
                 ############################################################################################################################
-                # BOTAO DESLOGAR
+                # SPACE
                 ButtonGrid_Menu_v2:
                     pos_hint: 0.5, 0.5
-                    on_press: app.cor_principal_deslogar = app.cor_barra_inferior_licenca;
-                    on_enter: app.cor_principal_deslogar = app.cor_widgets_hover;
-                    on_leave: app.cor_principal_deslogar = app.menu_unselected_color;
-
                     md_bg_color: 0,0,0,0
-                    spacing: 10
-
-                    # ICONE
-                    MDBoxLayout:
-                        md_bg_color: 1,0,0,0
-                        Image:
-                            source: 'icons/deslogar.png'
-                            size_hint: 1,1
-                            pos_hint: {'center_x': .5,'center_y': .5}
-                            allow_stretch: False
-                            allow_ratio: False
-                            center_x: self.parent.center_x
-                            center_y: self.parent.center_y
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                    # TEXTO
-                    MDBoxLayout:
-                        size_hint: (4,1)
-                        md_bg_color: 0,0,1,0
-                        MDLabel:
-                            markup: True
-                            text: '[b]Deslogar[/b]'
-                            halign: 'left'
-                            valign: 'middle'
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                            font_size: int(self.parent.width/2 * 0.259)
 
         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         # AREA LIVRE + BARRA DE MENU
@@ -4477,7 +4396,7 @@ WindowManager:
                     height: 30
 
                     MDLabel:
-                        text: 'Produto Licenciado 2022 © Todos os Direitos Reservados      '
+                        text: '@github.com/ClaytonSdS      '
                         halign: "right"
                         bold: False
                         font_size: app.font_size_normal_2 - 3
@@ -4526,7 +4445,7 @@ WindowManager:
                 spacing: 20
                 MDLabel:
                     markup: True
-                    text: '[b]Invision Study[/b]'
+                    text: '[b]StudyControl[/b]'
                     halign: 'center'
                     valign: 'middle'
                     color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -4776,39 +4695,10 @@ WindowManager:
                             font_size: int(self.parent.width/2 * 0.259)
 
                 ############################################################################################################################
-                # BOTAO DESLOGAR
+                # SPACE
                 ButtonGrid_Menu_v2:
                     pos_hint: 0.5, 0.5
-                    on_press: app.cor_principal_deslogar = app.cor_barra_inferior_licenca;
-                    on_enter: app.cor_principal_deslogar = app.cor_widgets_hover;
-                    on_leave: app.cor_principal_deslogar = app.menu_unselected_color;
-
                     md_bg_color: 0,0,0,0
-                    spacing: 10
-
-                    # ICONE
-                    MDBoxLayout:
-                        md_bg_color: 1,0,0,0
-                        Image:
-                            source: 'icons/deslogar.png'
-                            size_hint: 1,1
-                            pos_hint: {'center_x': .5,'center_y': .5}
-                            allow_stretch: False
-                            allow_ratio: False
-                            center_x: self.parent.center_x
-                            center_y: self.parent.center_y
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                    # TEXTO
-                    MDBoxLayout:
-                        size_hint: (4,1)
-                        md_bg_color: 0,0,1,0
-                        MDLabel:
-                            markup: True
-                            text: '[b]Deslogar[/b]'
-                            halign: 'left'
-                            valign: 'middle'
-                            color: get_color_from_hex('#{}'.format(app.cor_principal_deslogar))
-                            font_size: int(self.parent.width/2 * 0.259)
 
         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         # AREA LIVRE + BARRA DE MENU
@@ -5346,12 +5236,12 @@ WindowManager:
                     height: 30
 
                     MDLabel:
-                        text: 'Produto Licenciado 2022 © Todos os Direitos Reservados      '
+                        text: '@github.com/ClaytonSdS      '
                         halign: "right"
                         bold: False
                         font_size: app.font_size_normal_2 - 3
                         theme_text_color: "Custom"
-                        text_color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+                        text_color: get_color_from_hex('#{}'.format(app.cor_licenca_texto))
 
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5402,7 +5292,7 @@ WindowManager:
                 spacing: 20
                 MDLabel:
                     markup: True
-                    text: '[b]Invision Study[/b]'
+                    text: '[b]StudyControl[/b]'
                     halign: 'center'
                     valign: 'middle'
                     color: get_color_from_hex('#{}'.format(app.cor_letras_outras))
@@ -5645,37 +5535,10 @@ WindowManager:
                             font_size: int(self.parent.width/2 * 0.259)
 
                 ############################################################################################################################
-                # BOTAO DESLOGAR
+                # SPACE
                 ButtonGrid_Menu_v2:
                     pos_hint: 0.5, 0.5
-                    on_press: root.cor_principal_deslogar = root.cor_licenca;
-                    on_enter: root.cor_principal_deslogar = root.cor_widget_hover;
-                    on_leave: root.cor_principal_deslogar = root.cor_menu_letra;
                     md_bg_color: 0,0,0,0
-                    spacing: 10
-                    # ICONE
-                    MDBoxLayout:
-                        md_bg_color: 1,0,0,0
-                        Image:
-                            source: 'icons/deslogar.png'
-                            size_hint: 1,1
-                            pos_hint: {'center_x': .5,'center_y': .5}
-                            allow_stretch: False
-                            allow_ratio: False
-                            center_x: self.parent.center_x
-                            center_y: self.parent.center_y
-                            color: get_color_from_hex('#{}'.format(root.cor_principal_deslogar))
-                    # TEXTO
-                    MDBoxLayout:
-                        size_hint: (4,1)
-                        md_bg_color: 0,0,1,0
-                        MDLabel:
-                            markup: True
-                            text: '[b]Deslogar[/b]'
-                            halign: 'left'
-                            valign: 'middle'
-                            color: get_color_from_hex('#{}'.format(root.cor_principal_deslogar))
-                            font_size: int(self.parent.width/2 * 0.259)
 
         #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         # AREA LIVRE + BARRA DE MENU
@@ -5862,7 +5725,7 @@ WindowManager:
                                         allow_stretch: True
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                         ButtonGrid:
-                            on_release: self.cor = root.cor_widget; root.suporte()
+                            on_release: self.cor = root.cor_widget;
                             on_enter: self.cor = root.cor_widget_hover;
                             on_leave: self.cor = root.cor_widget;
                             on_press: self.cor = root.cor_licenca;
@@ -5900,7 +5763,7 @@ WindowManager:
                                         allow_stretch: True
                                         color: get_color_from_hex('#{}'.format(root.cor_aplicativo))
                         ButtonGrid:
-                            on_release: self.cor = root.cor_widget; root.sugestao()
+                            on_release: self.cor = root.cor_widget;
                             on_enter: self.cor = root.cor_widget_hover;
                             on_leave: self.cor = root.cor_widget;
                             on_press: self.cor = root.cor_licenca;
@@ -5961,15 +5824,7 @@ WindowManager:
                             md_bg_color: 0,0,0,0
                             orientation: 'horizontal'
                             size_hint: (0.45,1)
-                            Image:
-                                source: 'icons/logo_invision_study.png'
-                                size_hint: 0.5,0.5
-                                pos_hint: {'center_x': .9,'center_y': .5}
-                                allow_stretch: False
-                                allow_ratio: False
-                                center_x: self.parent.center_x
-                                center_y: self.parent.center_y
-                                color: get_color_from_hex('#{}'.format(app.cor_principal_aplicativo))
+
             #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             # BARRA INFERIOR
                 MDBoxLayout:
@@ -5981,7 +5836,7 @@ WindowManager:
                     height: 30
 
                     MDLabel:
-                        text: 'Produto Licenciado 2022 © Todos os Direitos Reservados      '
+                        text: '@github.com/ClaytonSdS      '
                         halign: "right"
                         bold: False
                         font_size: app.font_size_normal_2 - 3
