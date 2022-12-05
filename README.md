@@ -21,7 +21,7 @@ This project was made to improve Python skills and the main objective was to dev
    - Run StudyControl.exe file
    
 # Pictures
-- [Picture 1](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic1.png), [Picture 2](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic2.png), [Picture 3](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic3.png), [Picture 4](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic4.png) and [Picture 5](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic5.png)
+- [Picture 1](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic1.png), [Picture 2](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic2.png), [Picture 3](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic3.png), [Picture 4](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic4.png) and [Picture 5](https://github.com/ClaytonSdS/StudyControl/blob/main/Pictures/Pic5.png).
 
 # Follow for more
 - [LinkedIn](https://www.linkedin.com/in/clayton-santos-579682205/)
