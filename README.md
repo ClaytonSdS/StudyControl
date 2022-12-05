@@ -17,7 +17,7 @@ This project was made to improve Python skills and the main objective was to dev
 **2. Direct Download**
    - [Download Link](https://drive.google.com/file/d/16cqaYVU99z_NwNboxGCkVVWP5Tch2Ilu/view?usp=share_link)
    - Extract StudyControl.rar
-   - Open Run\dist\StudyControl folder
+   - Open dist\StudyControl folder
    - Run StudyControl.exe file
    
 # Pictures
